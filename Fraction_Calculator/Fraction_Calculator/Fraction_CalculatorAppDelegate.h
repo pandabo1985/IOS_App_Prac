@@ -1,4 +1,4 @@
-//
+ //
 //  Fraction_CalculatorAppDelegate.h
 //  Fraction_Calculator
 //

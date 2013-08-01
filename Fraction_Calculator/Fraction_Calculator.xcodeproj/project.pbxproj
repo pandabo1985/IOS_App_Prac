@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B63DB1617A7F30E00C1CECF /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63DB1517A7F30E00C1CECF /* Fraction.m */; };
+		3B63DB1917A7FB7F00C1CECF /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63DB1817A7FB7F00C1CECF /* Calculator.m */; };
 		3B77AD6C17A6ACED003539D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B77AD6B17A6ACED003539D0 /* UIKit.framework */; };
 		3B77AD6E17A6ACED003539D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B77AD6D17A6ACED003539D0 /* Foundation.framework */; };
 		3B77AD7017A6ACED003539D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B77AD6F17A6ACED003539D0 /* CoreGraphics.framework */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B63DB1417A7F30E00C1CECF /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
+		3B63DB1517A7F30E00C1CECF /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
+		3B63DB1717A7FB7F00C1CECF /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		3B63DB1817A7FB7F00C1CECF /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		3B77AD6817A6ACED003539D0 /* Fraction_Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fraction_Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B77AD6B17A6ACED003539D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B77AD6D17A6ACED003539D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +93,10 @@
 				3B77AD7B17A6ACED003539D0 /* Fraction_CalculatorAppDelegate.m */,
 				3B77AD8317A6ACED003539D0 /* Fraction_CalculatorViewController.h */,
 				3B77AD8417A6ACED003539D0 /* Fraction_CalculatorViewController.m */,
+				3B63DB1417A7F30E00C1CECF /* Fraction.h */,
+				3B63DB1517A7F30E00C1CECF /* Fraction.m */,
+				3B63DB1717A7FB7F00C1CECF /* Calculator.h */,
+				3B63DB1817A7FB7F00C1CECF /* Calculator.m */,
 				3B77AD8617A6ACEE003539D0 /* Fraction_CalculatorViewController.xib */,
 				3B77AD7217A6ACED003539D0 /* Supporting Files */,
 			);
@@ -177,6 +187,8 @@
 				3B77AD7817A6ACED003539D0 /* main.m in Sources */,
 				3B77AD7C17A6ACED003539D0 /* Fraction_CalculatorAppDelegate.m in Sources */,
 				3B77AD8517A6ACED003539D0 /* Fraction_CalculatorViewController.m in Sources */,
+				3B63DB1617A7F30E00C1CECF /* Fraction.m in Sources */,
+				3B63DB1917A7FB7F00C1CECF /* Calculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +311,7 @@
 				3B77AD8D17A6ACEE003539D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

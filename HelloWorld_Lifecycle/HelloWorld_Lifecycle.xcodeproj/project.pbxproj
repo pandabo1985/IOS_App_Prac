@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4AD76F17AAA65C00DB0384 /* hello_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AD76E17AAA65C00DB0384 /* hello_p.png */; };
 		3B7736D117A6B32100444B57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7736D017A6B32100444B57 /* UIKit.framework */; };
 		3B7736D317A6B32100444B57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7736D217A6B32100444B57 /* Foundation.framework */; };
 		3B7736D517A6B32100444B57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7736D417A6B32100444B57 /* CoreGraphics.framework */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B4AD76E17AAA65C00DB0384 /* hello_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hello_p.png; path = ../hello_p.png; sourceTree = "<group>"; };
 		3B7736CD17A6B32100444B57 /* HelloWorld_LifeCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld_LifeCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7736D017A6B32100444B57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B7736D217A6B32100444B57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,9 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B4AD76D17AAA60900DB0384 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AD76E17AAA65C00DB0384 /* hello_p.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3B7736C417A6B32100444B57 = {
 			isa = PBXGroup;
 			children = (
+				3B4AD76D17AAA60900DB0384 /* Resources */,
 				3B7736D617A6B32100444B57 /* HelloWorld_LifeCycle */,
 				3B7736CF17A6B32100444B57 /* Frameworks */,
 				3B7736CE17A6B32100444B57 /* Products */,
@@ -160,6 +171,7 @@
 				3B7736E317A6B32100444B57 /* Default.png in Resources */,
 				3B7736E517A6B32100444B57 /* Default@2x.png in Resources */,
 				3B7736E717A6B32100444B57 /* Default-568h@2x.png in Resources */,
+				3B4AD76F17AAA65C00DB0384 /* hello_p.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +299,7 @@
 				3B7736EC17A6B32100444B57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
