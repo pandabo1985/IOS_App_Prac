@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B87BA6517B778A00083932E /* button_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B87BA6317B778A00083932E /* button_01.jpg */; };
+		3B87BA6617B778A00083932E /* button_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B87BA6417B778A00083932E /* button_02.jpg */; };
 		3BF8FBC117B13CBA00F735BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF8FBC017B13CBA00F735BA /* UIKit.framework */; };
 		3BF8FBC317B13CBA00F735BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF8FBC217B13CBA00F735BA /* Foundation.framework */; };
 		3BF8FBC517B13CBA00F735BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF8FBC417B13CBA00F735BA /* CoreGraphics.framework */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B87BA6317B778A00083932E /* button_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_01.jpg; sourceTree = "<group>"; };
+		3B87BA6417B778A00083932E /* button_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_02.jpg; sourceTree = "<group>"; };
 		3BF8FBBD17B13CBA00F735BA /* Control Fun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Control Fun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF8FBC017B13CBA00F735BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3BF8FBC217B13CBA00F735BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				3BF8FBE417B1436900F735BA /* mm.jpg */,
+				3B87BA6317B778A00083932E /* button_01.jpg */,
+				3B87BA6417B778A00083932E /* button_02.jpg */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -176,6 +182,8 @@
 				3BF8FBD717B13CBA00F735BA /* Default-568h@2x.png in Resources */,
 				3BF8FBDD17B13CBA00F735BA /* ControlFunViewController.xib in Resources */,
 				3BF8FBE517B1436900F735BA /* mm.jpg in Resources */,
+				3B87BA6517B778A00083932E /* button_01.jpg in Resources */,
+				3B87BA6617B778A00083932E /* button_02.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +317,7 @@
 				3BF8FBE217B13CBA00F735BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

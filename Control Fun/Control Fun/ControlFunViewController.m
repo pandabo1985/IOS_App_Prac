@@ -94,7 +94,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    UIImage *buttonImageNormal = [UIImage imageNamed:@"button_01.jpg"];
+    UIImage *stretchableImageButton_01 = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [doSomeThingButton setBackgroundImage:stretchableImageButton_01 forState:UIControlStateNormal];
+    
+    UIImage *buttonImagePressed = [UIImage imageNamed:@"button_02.jpg"];
+    UIImage *stretcheableImageButtton_02 = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [doSomeThingButton setBackgroundImage:stretcheableImageButtton_02 forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
