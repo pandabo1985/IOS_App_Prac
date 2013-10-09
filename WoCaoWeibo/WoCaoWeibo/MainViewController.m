@@ -25,7 +25,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self _initViewController];
+        //隐藏系统tabBar
+        [self.tabBar setHidden:YES];
     }
     return self;
 }
@@ -33,7 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self _initViewController];
+    [self _initTabbarView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,5 +61,30 @@
         [nav release];
     }
     self.viewControllers = viewControllers;
+}
+
+-(void)_initTabbarView{
+    _tabbarView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-49, ScreenWith, 49)];
+    _tabbarView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbar_background.png"]];
+    [self.view addSubview:_tabbarView];
+    
+    NSArray *background = @[@"tabbar_home.png",@"tabbar_message_center.png",@"tabbar_profile.png",@"tabbar_discover.png",@"tabbar_more.png"];
+    NSArray *heightBackground = @[@"tabbar_home_highlighted.png",@"tabbar_message_center_highlighted.png",@"tabbar_profile_highlighted.png",@"tabbar_discover_highlighted",@"tabbar_more_highlighted.png"];
+    for (int i = 0; i < background.count; i++) {
+        NSString *backImage = background[i];
+        NSString *heightImage = heightBackground[i];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake((ScreenWith/5-30)/2+(i*ScreenWith/5),(49-30)/2, 30, 30);
+        button.tag = i;
+        [button setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:heightImage] forState:UIControlStateHighlighted];
+        [button addTarget:self action:@selector(selectedTab:) forControlEvents:UIControlEventTouchUpInside];
+        [_tabbarView addSubview:button];
+    }
+}
+
+-(void)selectedTab:(UIButton *)button
+{
+    self.selectedIndex = button.tag;
 }
 @end

@@ -11,5 +11,8 @@
 
 
 @interface MainViewController : UITabBarController
+{
+    UIView *_tabbarView;
+}
 
 @end

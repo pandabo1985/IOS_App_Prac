@@ -27,14 +27,14 @@
 {
     [super viewDidLoad];
 	float version = WXHLOSVersion();
-    if (version >= 5.0) {
-        UIImage *image = [UIImage imageNamed:@"navigationbar_button_background.png"];
-        [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    }
-//    if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-//        UIImage *image = [UIImage imageNamed:@"navigationbar_button_background.png"];
+//    if (version >= 5.0) {
+//        UIImage *image = [UIImage imageNamed:@"navigationbar_background.png"];
 //        [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 //    }
+    if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
+        UIImage *image = [UIImage imageNamed:@"navigationbar_background.png"];
+        [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    }
     
 }
 
