@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7F14AD10-DD1C-4A03-B0C0-8D1B39694BAC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Oschina_Prac</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D0561EAE-BB0C-4DE0-9646-B8F04DCD4939</key>
+		<string>https://github.com/pandabo1985/IOS_App_Prac.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IOS_App_Prac/Oschina_Prac/Oschina_Prac.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D0561EAE-BB0C-4DE0-9646-B8F04DCD4939</key>
+		<string>../../..</string>
+		<key>D7D18262-3F79-40D1-8AFB-A6FBE71271AE</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pandabo1985/IOS_App_Prac.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D7D18262-3F79-40D1-8AFB-A6FBE71271AE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D7D18262-3F79-40D1-8AFB-A6FBE71271AE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>databack</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D0561EAE-BB0C-4DE0-9646-B8F04DCD4939</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS_App_Prac</string>
+		</dict>
+	</array>
+</dict>
+</plist>
