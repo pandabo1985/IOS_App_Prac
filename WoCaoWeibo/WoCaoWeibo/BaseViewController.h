@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SinaWeibo.h"
+
 
 @interface BaseViewController : UIViewController
+
+- (SinaWeibo *)sinaweibo;
 
 @end

@@ -26,13 +26,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *bindItem = [[UIBarButtonItem alloc] initWithTitle:@"绑定账号" style:UIBarButtonItemStyleBordered target:self action:@selector(bindAction:)];
+    self.navigationItem.rightBarButtonItem =[bindItem autorelease];
+   
+    UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销账号" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction:)];
+    self.navigationItem.leftBarButtonItem =[logoutItem autorelease];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -action
+-(void)bindAction:(UIBarButtonItem *)buttonItem
+{
+    [self.sinaweibo logIn];
+}
+
+-(void)logoutAction:(UIBarButtonItem *)buttonItem
+{
+    [self.sinaweibo logOut];
 }
 
 @end

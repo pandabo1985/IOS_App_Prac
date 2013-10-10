@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "AppDelegate.h"
 
 @interface BaseViewController ()
 
@@ -34,5 +35,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (SinaWeibo *)sinaweibo
+{
+    AppDelegate *appDelgate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    SinaWeibo *sinaWeibo = appDelgate.sinaweibo;
+    return sinaWeibo;
+}
+
+//override
+-(void)setTitle:(NSString *)title
+{
+    [super setTitle:title];
+    UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectZero];
+    titleLable.textColor = [UIColor blackColor];
+    titleLable.font = [UIFont boldSystemFontOfSize:18.0f];
+    titleLable.backgroundColor = [UIColor clearColor];
+    titleLable.text = title;
+    [titleLable sizeToFit];
+    self.navigationItem.titleView = [titleLable autorelease];
+    
+}
+
 
 @end

@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
+#import "DDMenuController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
+#import "SinaWeibo.h"
+#import "CONSTS.h"
 
 @implementation AppDelegate
 
@@ -19,10 +24,33 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    MainViewController *mainCtrl = [[MainViewController alloc] init];
-    self.window.rootViewController = mainCtrl;
+    _mainCtrl = [[MainViewController alloc] init];
+   
+    DDMenuController *menuCtrl = [[DDMenuController alloc]initWithRootViewController:_mainCtrl];
     
+    LeftViewController *lefCtrl = [[LeftViewController alloc] init];
+    RightViewController *rightCtrl = [[RightViewController alloc] init];
+    menuCtrl.leftViewController = lefCtrl;
+    menuCtrl.rightViewController =rightCtrl;
+    
+    self.window.rootViewController = menuCtrl;
+    [self _initSinaWeibo];
+    [menuCtrl release];
+
     return YES;
+}
+
+-(void)_initSinaWeibo
+{
+    _sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:_mainCtrl];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
+    if ([sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
+    {
+        _sinaweibo.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
+        _sinaweibo.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
+        _sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

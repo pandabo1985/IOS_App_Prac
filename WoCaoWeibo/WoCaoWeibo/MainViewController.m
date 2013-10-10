@@ -15,6 +15,7 @@
 #import "MoreViewController.h"
 #import "BaseNavigationController.h"
 
+
 @interface MainViewController ()
 
 @end
@@ -64,7 +65,7 @@
 }
 
 -(void)_initTabbarView{
-    _tabbarView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-49, ScreenWith, 49)];
+    _tabbarView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-49 -20, ScreenWith, 49)];
     _tabbarView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tabbar_background.png"]];
     [self.view addSubview:_tabbarView];
     
@@ -87,4 +88,28 @@
 {
     self.selectedIndex = button.tag;
 }
+
+#pragma mark -sinaWeibo delegate
+- (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo
+{
+    NSLog(@"sinaweiboDidLogIn");
+}
+- (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
+{
+    
+}
+- (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
+{
+    
+}
+- (void)sinaweibo:(SinaWeibo *)sinaweibo logInDidFailWithError:(NSError *)error
+{
+    
+}
+- (void)sinaweibo:(SinaWeibo *)sinaweibo accessTokenInvalidOrExpired:(NSError *)error
+{
+    
+}
+
+
 @end
