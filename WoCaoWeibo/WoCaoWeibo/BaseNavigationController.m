@@ -7,6 +7,7 @@
 //
 
 #import "BaseNavigationController.h"
+#import "ThemeManaer.h"
 
 @interface BaseNavigationController ()
 
@@ -18,23 +19,30 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeNotification:) name:kThemeDidChangeNotification object:nil];
     }
     return self;
 }
 
+-(void)dealloc
+{
+    [super dealloc];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kThemeDidChangeNotification object:nil];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	float version = WXHLOSVersion();
-//    if (version >= 5.0) {
+    [self loadThemeImage];
+//	float version = WXHLOSVersion();
+////    if (version >= 5.0) {
+////        UIImage *image = [UIImage imageNamed:@"navigationbar_background.png"];
+////        [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+////    }
+//    if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
 //        UIImage *image = [UIImage imageNamed:@"navigationbar_background.png"];
 //        [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 //    }
-    if ([self.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]) {
-        UIImage *image = [UIImage imageNamed:@"navigationbar_background.png"];
-        [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    }
     
 }
 
@@ -44,4 +52,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -nsnotification acitons
+-(void)themeNotification:(NSNotification *)notification
+{
+    [self loadThemeImage];
+}
+
+-(void)loadThemeImage{
+    float version = WXHLOSVersion();
+   if (version >= 5.0) {
+    UIImage *image = [[ThemeManaer shareInstance] getThemeImage:@"navigationbar_background.png"];
+    [self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+  }else{
+      //调用setNeddsDisplay方法让渲染引擎异步调用drawRec方法 
+      [self.navigationBar setNeedsDisplay];
+  }
+    
+}
 @end

@@ -8,7 +8,6 @@
 //主题管理类
 #import <Foundation/Foundation.h>
 
-#define kThemeDidChangeNotification @"kThemeDidChangeNotification"
 
 @interface ThemeManaer : NSObject
 

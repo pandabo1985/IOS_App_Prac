@@ -45,7 +45,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
 
 -(void)themeNotification:(NSNotification *)notification
 {
-    [self loadImage];
+    [self loadThemeImage];
 }
 
 -(void)dealloc
@@ -54,7 +54,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
     [super dealloc];
 }
 
--(void)loadImage{
+-(void)loadThemeImage{
     ThemeManaer *themeMage = [ThemeManaer shareInstance];
     
     UIImage *image = [themeMage getThemeImage:self.imageName];
@@ -79,7 +79,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
         [_imageName release];
         _imageName = [imageName copy];
     }
-    [self loadImage];
+    [self loadThemeImage];
 }
 
 -(void)setHighlightImageName:(NSString *)highlightImageName
@@ -88,7 +88,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
         [_highlightImageName release];
         _highlightImageName = [highlightImageName copy];
     }
-    [self loadImage];
+    [self loadThemeImage];
 }
 
 
@@ -98,7 +98,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
         [_backgroundImageName release];
         _backgroundImageName = backgroundImageName;
     }
-    [self loadImage];
+    [self loadThemeImage];
 }
 
 -(void)setBackgroundHighlightImageName:(NSString *)backgroundHighlightImageName
@@ -107,7 +107,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
         [_backgroundHighlightImageName release];
         _backgroundHighlightImageName = backgroundHighlightImageName;
     }
-    [self loadImage];
+    [self loadThemeImage];
 }
 
 @end

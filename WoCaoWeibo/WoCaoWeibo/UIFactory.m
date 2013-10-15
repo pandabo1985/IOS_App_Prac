@@ -21,4 +21,10 @@
     return [button autorelease];
 }
 
++(ThemeImageView *)createImageView:(NSString *)imageName
+{
+    ThemeImageView *themeImage = [[ThemeImageView alloc] initWithImageName:imageName];
+    return [themeImage autorelease];
+}
+
 @end

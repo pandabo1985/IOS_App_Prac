@@ -530,6 +530,7 @@
 		3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D25180A9F9F00D4BB66 /* ThemeViewController.m */; };
 		3BA52D28180A9F9F00D4BB66 /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */; };
 		3BA52D2B180AD5CC00D4BB66 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */; };
+		3BBD1664180D839A00E94FDB /* ThemeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD1663180D839A00E94FDB /* ThemeImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1106,6 +1107,8 @@
 		3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeViewController.xib; sourceTree = "<group>"; };
 		3BA52D29180AD5CB00D4BB66 /* UIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFactory.h; sourceTree = "<group>"; };
 		3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFactory.m; sourceTree = "<group>"; };
+		3BBD1662180D839A00E94FDB /* ThemeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeImageView.h; sourceTree = "<group>"; };
+		3BBD1663180D839A00E94FDB /* ThemeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1889,6 +1892,8 @@
 				3BA52D1F180A821C00D4BB66 /* theme.plist */,
 				3BA52D21180A929900D4BB66 /* ThemeButton.h */,
 				3BA52D22180A929900D4BB66 /* ThemeButton.m */,
+				3BBD1662180D839A00E94FDB /* ThemeImageView.h */,
+				3BBD1663180D839A00E94FDB /* ThemeImageView.m */,
 				3BA52D29180AD5CB00D4BB66 /* UIFactory.h */,
 				3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */,
 			);
@@ -2478,6 +2483,7 @@
 				3B89FC931806E69C00D99134 /* SinaWeibo.m in Sources */,
 				3B89FC821806D5D500D99134 /* RightViewController.m in Sources */,
 				3B76BA6518043D6D00B53C87 /* HomeViewController.m in Sources */,
+				3BBD1664180D839A00E94FDB /* ThemeImageView.m in Sources */,
 				3B76BA071804335500B53C87 /* AppDelegate.m in Sources */,
 				3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */,
 				3B76BA451804367E00B53C87 /* SDWebImageManager.m in Sources */,

@@ -11,6 +11,7 @@
 #import "ThemeManaer.h"
 
 @interface BaseViewController : UIViewController
+@property(nonatomic, assign) BOOL isBackButton;
 
 - (SinaWeibo *)sinaweibo;
 
