@@ -31,14 +31,30 @@
    
     UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销账号" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction:)];
     self.navigationItem.leftBarButtonItem =[logoutItem autorelease];
-
+    
+    if (self.sinaweibo.isAuthValid) {
+        [self loadWeiboData];
+    }
     
 }
 
-- (void)didReceiveMemoryWarning
+
+
+#pragma mark -load data
+-(void)loadWeiboData
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@"5" forKey:@"count"];
+    [self.sinaweibo requestWithURL:@"statuses/home_timeline.json" params:params httpMethod:@"GET" delegate:self];
+}
+
+#pragma mark -SinaWeiboRequestDelegate
+- (void)request:(SinaWeiboRequest *)request didFailWithError:(NSError *)error
+{
+    NSLog(@"网络加载失败：%@",error);
+}
+- (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
+{
+    NSLog(@"%@",request);
 }
 
 #pragma mark -action
@@ -52,4 +68,15 @@
     [self.sinaweibo logOut];
 }
 
+#pragma mark -memory manager
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc
+{
+    [super dealloc];
+}
 @end

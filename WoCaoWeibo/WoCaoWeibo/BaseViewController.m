@@ -53,7 +53,7 @@
     titleLable.backgroundColor = [UIColor clearColor];
     titleLable.text = title;
     [titleLable sizeToFit];
-    self.navigationItem.titleView = [titleLable autorelease];
+  self.navigationItem.titleView = [titleLable autorelease];
     
 }
 

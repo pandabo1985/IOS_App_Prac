@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SinaWeibo.h"
-
+#import "ThemeManaer.h"
 
 @interface BaseViewController : UIViewController
 

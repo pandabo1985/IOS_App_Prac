@@ -33,8 +33,10 @@
     menuCtrl.leftViewController = lefCtrl;
     menuCtrl.rightViewController =rightCtrl;
     
-    self.window.rootViewController = menuCtrl;
     [self _initSinaWeibo];
+    
+    self.window.rootViewController = menuCtrl;
+   
     [menuCtrl release];
 
     return YES;

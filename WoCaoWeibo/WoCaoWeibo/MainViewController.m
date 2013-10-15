@@ -14,6 +14,8 @@
 #import "DiscoverViewController.h"
 #import "MoreViewController.h"
 #import "BaseNavigationController.h"
+#import "ThemeButton.h"
+#import "UIFactory.h"
 
 
 @interface MainViewController ()
@@ -74,11 +76,14 @@
     for (int i = 0; i < background.count; i++) {
         NSString *backImage = background[i];
         NSString *heightImage = heightBackground[i];
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        ThemeButton *button = [[ThemeButton alloc] initWithImage:backImage highlighteImageName:heightImage];
+        UIButton *button = [UIFactory createButton:backImage highlighted:heightImage];
         button.frame = CGRectMake((ScreenWith/5-30)/2+(i*ScreenWith/5),(49-30)/2, 30, 30);
         button.tag = i;
-        [button setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:heightImage] forState:UIControlStateHighlighted];
+//        [button setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];
+//        [button setImage:[UIImage imageNamed:heightImage] forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(selectedTab:) forControlEvents:UIControlEventTouchUpInside];
         [_tabbarView addSubview:button];
     }
@@ -92,11 +97,22 @@
 #pragma mark -sinaWeibo delegate
 - (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo
 {
-    NSLog(@"sinaweiboDidLogIn");
+    //保存认证数据到本地
+    NSDictionary *authData = [NSDictionary dictionaryWithObjectsAndKeys:
+                              sinaweibo.accessToken, @"AccessTokenKey",
+                              sinaweibo.expirationDate, @"ExpirationDateKey",
+                              sinaweibo.userID, @"UserIDKey",
+                              sinaweibo.refreshToken, @"refresh_token", nil];
+    [[NSUserDefaults standardUserDefaults] setObject:authData forKey:@"SinaWeiboAuthData"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+
+
 - (void)sinaweiboDidLogOut:(SinaWeibo *)sinaweibo
 {
-    
+    //移除renzhengxinxi
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SinaWeiboAuthData"];
 }
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
 {

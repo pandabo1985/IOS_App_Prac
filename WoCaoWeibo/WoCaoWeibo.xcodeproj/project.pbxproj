@@ -523,6 +523,13 @@
 		3B89FC931806E69C00D99134 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC8B1806E69C00D99134 /* SinaWeibo.m */; };
 		3B89FC941806E69C00D99134 /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC8D1806E69C00D99134 /* SinaWeiboAuthorizeView.m */; };
 		3B89FC951806E69C00D99134 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC901806E69C00D99134 /* SinaWeiboRequest.m */; };
+		3BA52D1A180A815D00D4BB66 /* Skins in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D19180A815D00D4BB66 /* Skins */; };
+		3BA52D1E180A81F400D4BB66 /* ThemeManaer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D1D180A81F400D4BB66 /* ThemeManaer.m */; };
+		3BA52D20180A821C00D4BB66 /* theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D1F180A821C00D4BB66 /* theme.plist */; };
+		3BA52D23180A929900D4BB66 /* ThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D22180A929900D4BB66 /* ThemeButton.m */; };
+		3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D25180A9F9F00D4BB66 /* ThemeViewController.m */; };
+		3BA52D28180A9F9F00D4BB66 /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */; };
+		3BA52D2B180AD5CC00D4BB66 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1088,6 +1095,17 @@
 		3B89FC8F1806E69C00D99134 /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
 		3B89FC901806E69C00D99134 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
 		3B89FC961806E79200D99134 /* CONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONSTS.h; sourceTree = "<group>"; };
+		3BA52D19180A815D00D4BB66 /* Skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Skins; sourceTree = "<group>"; };
+		3BA52D1C180A81F400D4BB66 /* ThemeManaer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManaer.h; sourceTree = "<group>"; };
+		3BA52D1D180A81F400D4BB66 /* ThemeManaer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManaer.m; sourceTree = "<group>"; };
+		3BA52D1F180A821C00D4BB66 /* theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = theme.plist; sourceTree = "<group>"; };
+		3BA52D21180A929900D4BB66 /* ThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeButton.h; sourceTree = "<group>"; };
+		3BA52D22180A929900D4BB66 /* ThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeButton.m; sourceTree = "<group>"; };
+		3BA52D24180A9F9F00D4BB66 /* ThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeViewController.h; sourceTree = "<group>"; };
+		3BA52D25180A9F9F00D4BB66 /* ThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeViewController.m; sourceTree = "<group>"; };
+		3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeViewController.xib; sourceTree = "<group>"; };
+		3BA52D29180AD5CB00D4BB66 /* UIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFactory.h; sourceTree = "<group>"; };
+		3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1119,6 +1137,7 @@
 		3B5CBBAF18044DF5006402C1 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				3BA52D19180A815D00D4BB66 /* Skins */,
 				3B5CBBB018044DF5006402C1 /* btn_map_location.png */,
 				3B5CBBB118044DF5006402C1 /* btn_map_location@2x.png */,
 				3B5CBBB218044DF5006402C1 /* compose_camerabutton_background.png */,
@@ -1634,15 +1653,15 @@
 		3B76B9FC1804335400B53C87 /* WoCaoWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				3B76BA051804335400B53C87 /* AppDelegate.h */,
+				3B76BA061804335500B53C87 /* AppDelegate.m */,
+				3B76BA5318043B0900B53C87 /* MainViewController.h */,
+				3B76BA5418043B0900B53C87 /* MainViewController.m */,
 				3B76BA5D18043CB600B53C87 /* Home */,
 				3B76BA5E18043CC300B53C87 /* Message */,
 				3B76BA5F18043CD600B53C87 /* Profile */,
 				3B76BA6018043CEF00B53C87 /* Discover */,
 				3B76BA6118043D0000B53C87 /* More */,
-				3B76BA051804335400B53C87 /* AppDelegate.h */,
-				3B76BA061804335500B53C87 /* AppDelegate.m */,
-				3B76BA5318043B0900B53C87 /* MainViewController.h */,
-				3B76BA5418043B0900B53C87 /* MainViewController.m */,
 				3B76BA5618043B5400B53C87 /* BaseView */,
 				3B76BA2C1804348700B53C87 /* Models */,
 				3B76BA081804335500B53C87 /* Images.xcassets */,
@@ -1654,6 +1673,7 @@
 		3B76B9FD1804335400B53C87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BA52D1B180A81C700D4BB66 /* ThemeManager */,
 				3B5CBBAF18044DF5006402C1 /* image */,
 				3B76BA251804337D00B53C87 /* Uitils */,
 				3B76B9FE1804335400B53C87 /* WoCaoWeibo-Info.plist */,
@@ -1821,6 +1841,9 @@
 				3B76BA7618043F2000B53C87 /* MoreViewController.h */,
 				3B76BA7718043F2000B53C87 /* MoreViewController.m */,
 				3B76BA7818043F2000B53C87 /* MoreViewController.xib */,
+				3BA52D24180A9F9F00D4BB66 /* ThemeViewController.h */,
+				3BA52D25180A9F9F00D4BB66 /* ThemeViewController.m */,
+				3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -1856,6 +1879,20 @@
 				3B89FC901806E69C00D99134 /* SinaWeiboRequest.m */,
 			);
 			path = SinaWeibo;
+			sourceTree = "<group>";
+		};
+		3BA52D1B180A81C700D4BB66 /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				3BA52D1C180A81F400D4BB66 /* ThemeManaer.h */,
+				3BA52D1D180A81F400D4BB66 /* ThemeManaer.m */,
+				3BA52D1F180A821C00D4BB66 /* theme.plist */,
+				3BA52D21180A929900D4BB66 /* ThemeButton.h */,
+				3BA52D22180A929900D4BB66 /* ThemeButton.m */,
+				3BA52D29180AD5CB00D4BB66 /* UIFactory.h */,
+				3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */,
+			);
+			name = ThemeManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2244,6 +2281,7 @@
 				3B5CBF4418044DF9006402C1 /* timeline_gif@2x.png in Resources */,
 				3B76BA6B18043E1F00B53C87 /* MessageViewController.xib in Resources */,
 				3B5CBF0218044DF9006402C1 /* navigationbar_messages@2x.png in Resources */,
+				3BA52D1A180A815D00D4BB66 /* Skins in Resources */,
 				3B5CBE5B18044DF9006402C1 /* 059.png in Resources */,
 				3B5CBEE218044DF9006402C1 /* 104.png in Resources */,
 				3B5CBF0C18044DF9006402C1 /* newbar_icon_2@2x.png in Resources */,
@@ -2404,10 +2442,12 @@
 				3B5CBE8318044DF9006402C1 /* 072@2x.png in Resources */,
 				3B5CBECD18044DF9006402C1 /* 097.png in Resources */,
 				3B5CBE2618044DF9006402C1 /* 041@2x.png in Resources */,
+				3BA52D20180A821C00D4BB66 /* theme.plist in Resources */,
 				3B5CBDAF18044DF9006402C1 /* 001.png in Resources */,
 				3B5CBDC318044DF9006402C1 /* 008.gif in Resources */,
 				3B5CBE7D18044DF9006402C1 /* 070@2x.png in Resources */,
 				3B5CBDE218044DF9006402C1 /* 019.gif in Resources */,
+				3BA52D28180A9F9F00D4BB66 /* ThemeViewController.xib in Resources */,
 				3B89FC831806D5D500D99134 /* RightViewController.xib in Resources */,
 				3B5CBF3E18044DF9006402C1 /* tabbar_profile_highlighted@2x.png in Resources */,
 				3B5CBF4C18044DF9006402C1 /* timeline_retweet_background@2x.png in Resources */,
@@ -2430,6 +2470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B76BA471804367E00B53C87 /* UIImageView+WebCache.m in Sources */,
+				3BA52D23180A929900D4BB66 /* ThemeButton.m in Sources */,
 				3B76BA441804367E00B53C87 /* SDWebImageDownloader.m in Sources */,
 				3B76BA52180437A700B53C87 /* CustomCatagory.m in Sources */,
 				3B76BA4B1804372D00B53C87 /* RTLabel.m in Sources */,
@@ -2438,6 +2479,7 @@
 				3B89FC821806D5D500D99134 /* RightViewController.m in Sources */,
 				3B76BA6518043D6D00B53C87 /* HomeViewController.m in Sources */,
 				3B76BA071804335500B53C87 /* AppDelegate.m in Sources */,
+				3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */,
 				3B76BA451804367E00B53C87 /* SDWebImageManager.m in Sources */,
 				3B76BA4F1804374100B53C87 /* DDMenuController.m in Sources */,
 				3B89FC951806E69C00D99134 /* SinaWeiboRequest.m in Sources */,
@@ -2455,7 +2497,9 @@
 				3B76BA461804367E00B53C87 /* UIButton+WebCache.m in Sources */,
 				3B76BA2B1804345F00B53C87 /* UIUtils.m in Sources */,
 				3B76BA5518043B0900B53C87 /* MainViewController.m in Sources */,
+				3BA52D2B180AD5CC00D4BB66 /* UIFactory.m in Sources */,
 				3B76BA431804367E00B53C87 /* SDImageCache.m in Sources */,
+				3BA52D1E180A81F400D4BB66 /* ThemeManaer.m in Sources */,
 				3B89FC911806E69C00D99134 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2531,9 +2575,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -2564,8 +2608,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				SDKROOT = iphoneos6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2578,8 +2622,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WoCaoWeibo/WoCaoWeibo-Prefix.pch";
 				INFOPLIST_FILE = "WoCaoWeibo/WoCaoWeibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2593,8 +2638,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WoCaoWeibo/WoCaoWeibo-Prefix.pch";
 				INFOPLIST_FILE = "WoCaoWeibo/WoCaoWeibo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
