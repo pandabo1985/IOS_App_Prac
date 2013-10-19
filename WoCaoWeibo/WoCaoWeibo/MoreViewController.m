@@ -60,13 +60,21 @@
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-      NSLog(@"select == didDeselectRowAtIndexPath==%d",indexPath.row);
+//-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+//      NSLog(@"select == didDeselectRowAtIndexPath==%d",indexPath.row);
+//    if (indexPath.row == 0) {
+//           NSLog(@"select =11111= didDeselectRowAtIndexPath==%d",indexPath.row);
+//        ThemeViewController *themeCtrl = [[ThemeViewController alloc] init];
+//        [self.navigationController  pushViewController:themeCtrl animated:YES];
+//        [themeCtrl release]; 
+//    }
+//
+//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-           NSLog(@"select =11111= didDeselectRowAtIndexPath==%d",indexPath.row);
         ThemeViewController *themeCtrl = [[ThemeViewController alloc] init];
-        [self.navigationController  pushViewController:themeCtrl animated:YES];
-        [themeCtrl release]; 
+        [self.navigationController pushViewController:themeCtrl animated:YES];
+        [themeCtrl release];
     }
 }
 

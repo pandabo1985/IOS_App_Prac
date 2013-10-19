@@ -21,3 +21,4 @@
 //颜色
 #define Color(r,g,b,a) [UIColor colorWithRed:r green:g blue:b alpha:a]
 #define kNavigationBarTitleLale @"kNavigationBarTitleLale"
+#define kThemeListLabel          @"kThemeListLabel"

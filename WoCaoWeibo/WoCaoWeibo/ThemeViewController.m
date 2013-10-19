@@ -21,6 +21,7 @@
     if (self) {
      themes = [[ThemeManaer shareInstance].themesPlist allKeys];
     [themes retain];
+    self.title = @"主题切换";
     }
     return self;
 }
@@ -57,8 +58,16 @@
     return cell;
 }
 
+////切换主题
+//-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSString *themeName = themes[indexPath.row];
+//    [ThemeManaer shareInstance].themeName = themeName;
+//    [[NSNotificationCenter defaultCenter] postNotificationName:kThemeDidChangeNotification object:themeName];
+//}
+
 //切换主题
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *themeName = themes[indexPath.row];
     [ThemeManaer shareInstance].themeName = themeName;

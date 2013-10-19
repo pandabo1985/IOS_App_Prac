@@ -30,6 +30,7 @@
     [super viewDidLoad];
     NSArray *viewContollers = self.navigationController.viewControllers;
     if (viewContollers.count > 1 && self.isBackButton) {
+        
        UIButton *button = [UIFactory createButton:@"navigationbar_back.png" highlighted:@"navigationbar_back_highlighted.png"];
         button.frame = CGRectMake(0, 0, 24, 24);
         [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
@@ -45,7 +46,10 @@
 }
 -(void)backAction
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"backAction====");
+
+      [self.navigationController popViewControllerAnimated:YES];
+  
 }
 
 - (SinaWeibo *)sinaweibo
@@ -68,8 +72,8 @@
     titleLable.backgroundColor = [UIColor clearColor];
     titleLable.text = title;
     [titleLable sizeToFit];
-  self.navigationItem.titleView = [titleLable autorelease];
-    
+//  self.navigationItem.titleView = [titleLable autorelease]; //popViewControllerAnimated exc_bad_access
+    self.navigationItem.titleView = titleLable;
 }
 
 
