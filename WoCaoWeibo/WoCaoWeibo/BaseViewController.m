@@ -59,8 +59,11 @@
 -(void)setTitle:(NSString *)title
 {
     [super setTitle:title];
-    UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectZero];
-    titleLable.textColor = [UIColor blackColor];
+    
+    
+//    UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectZero];
+//    titleLable.textColor = [UIColor blackColor];
+    UILabel *titleLable = [UIFactory createLable:kNavigationBarTitleLale];
     titleLable.font = [UIFont boldSystemFontOfSize:18.0f];
     titleLable.backgroundColor = [UIColor clearColor];
     titleLable.text = title;

@@ -57,12 +57,13 @@
     return cell;
 }
 
-
+//切换主题
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *themeName = themes[indexPath.row];
     [ThemeManaer shareInstance].themeName = themeName;
     [[NSNotificationCenter defaultCenter] postNotificationName:kThemeDidChangeNotification object:themeName];
 }
+
 
 @end

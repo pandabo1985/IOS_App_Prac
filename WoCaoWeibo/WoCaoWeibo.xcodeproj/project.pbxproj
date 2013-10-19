@@ -487,8 +487,6 @@
 		3B76BA101804335500B53C87 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B76BA0F1804335500B53C87 /* XCTest.framework */; };
 		3B76BA111804335500B53C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B76B9F61804335400B53C87 /* Foundation.framework */; };
 		3B76BA121804335500B53C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B76B9FA1804335400B53C87 /* UIKit.framework */; };
-		3B76BA1A1804335500B53C87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B76BA181804335500B53C87 /* InfoPlist.strings */; };
-		3B76BA1C1804335500B53C87 /* WoCaoWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B76BA1B1804335500B53C87 /* WoCaoWeiboTests.m */; };
 		3B76BA28180433CB00B53C87 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B76BA27180433CB00B53C87 /* UIViewExt.m */; };
 		3B76BA2B1804345F00B53C87 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B76BA2A1804345F00B53C87 /* UIUtils.m */; };
 		3B76BA2F180434B300B53C87 /* WXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B76BA2E180434B300B53C87 /* WXBaseModel.m */; };
@@ -531,6 +529,8 @@
 		3BA52D28180A9F9F00D4BB66 /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */; };
 		3BA52D2B180AD5CC00D4BB66 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */; };
 		3BBD1664180D839A00E94FDB /* ThemeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD1663180D839A00E94FDB /* ThemeImageView.m */; };
+		3BE22CFF18101606000DEBAF /* fontcolor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE22CFE18101606000DEBAF /* fontcolor.plist */; };
+		3BE22D0218102299000DEBAF /* ThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE22D0118102299000DEBAF /* ThemeLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1027,9 +1027,6 @@
 		3B76BA081804335500B53C87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3B76BA0E1804335500B53C87 /* WoCaoWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoCaoWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B76BA0F1804335500B53C87 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3B76BA171804335500B53C87 /* WoCaoWeiboTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WoCaoWeiboTests-Info.plist"; sourceTree = "<group>"; };
-		3B76BA191804335500B53C87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3B76BA1B1804335500B53C87 /* WoCaoWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoCaoWeiboTests.m; sourceTree = "<group>"; };
 		3B76BA26180433CB00B53C87 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		3B76BA27180433CB00B53C87 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		3B76BA291804345F00B53C87 /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
@@ -1109,6 +1106,9 @@
 		3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFactory.m; sourceTree = "<group>"; };
 		3BBD1662180D839A00E94FDB /* ThemeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeImageView.h; sourceTree = "<group>"; };
 		3BBD1663180D839A00E94FDB /* ThemeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeImageView.m; sourceTree = "<group>"; };
+		3BE22CFE18101606000DEBAF /* fontcolor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fontcolor.plist; sourceTree = "<group>"; };
+		3BE22D0018102299000DEBAF /* ThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeLabel.h; sourceTree = "<group>"; };
+		3BE22D0118102299000DEBAF /* ThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1624,8 +1624,8 @@
 		3B76B9EA1804335400B53C87 = {
 			isa = PBXGroup;
 			children = (
+				3BE22CFE18101606000DEBAF /* fontcolor.plist */,
 				3B76B9FC1804335400B53C87 /* WoCaoWeibo */,
-				3B76BA151804335500B53C87 /* WoCaoWeiboTests */,
 				3B76B9F51804335400B53C87 /* Frameworks */,
 				3B76B9F41804335400B53C87 /* Products */,
 			);
@@ -1683,24 +1683,6 @@
 				3B76B9FF1804335400B53C87 /* InfoPlist.strings */,
 				3B76BA021804335400B53C87 /* main.m */,
 				3B76BA041804335400B53C87 /* WoCaoWeibo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3B76BA151804335500B53C87 /* WoCaoWeiboTests */ = {
-			isa = PBXGroup;
-			children = (
-				3B76BA1B1804335500B53C87 /* WoCaoWeiboTests.m */,
-				3B76BA161804335500B53C87 /* Supporting Files */,
-			);
-			path = WoCaoWeiboTests;
-			sourceTree = "<group>";
-		};
-		3B76BA161804335500B53C87 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3B76BA171804335500B53C87 /* WoCaoWeiboTests-Info.plist */,
-				3B76BA181804335500B53C87 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1894,6 +1876,8 @@
 				3BA52D22180A929900D4BB66 /* ThemeButton.m */,
 				3BBD1662180D839A00E94FDB /* ThemeImageView.h */,
 				3BBD1663180D839A00E94FDB /* ThemeImageView.m */,
+				3BE22D0018102299000DEBAF /* ThemeLabel.h */,
+				3BE22D0118102299000DEBAF /* ThemeLabel.m */,
 				3BA52D29180AD5CB00D4BB66 /* UIFactory.h */,
 				3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */,
 			);
@@ -2406,6 +2390,7 @@
 				3B5CBE8918044DF9006402C1 /* 074@2x.png in Resources */,
 				3B5CBE5A18044DF9006402C1 /* 059.gif in Resources */,
 				3B5CBE7418044DF9006402C1 /* 067@2x.png in Resources */,
+				3BE22CFF18101606000DEBAF /* fontcolor.plist in Resources */,
 				3B5CBEDB18044DF9006402C1 /* 102.gif in Resources */,
 				3B5CBE1018044DF9006402C1 /* 034.png in Resources */,
 				3B5CBDD918044DF9006402C1 /* 016.gif in Resources */,
@@ -2463,7 +2448,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B76BA1A1804335500B53C87 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2474,6 +2458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE22D0218102299000DEBAF /* ThemeLabel.m in Sources */,
 				3B76BA471804367E00B53C87 /* UIImageView+WebCache.m in Sources */,
 				3BA52D23180A929900D4BB66 /* ThemeButton.m in Sources */,
 				3B76BA441804367E00B53C87 /* SDWebImageDownloader.m in Sources */,
@@ -2514,7 +2499,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B76BA1C1804335500B53C87 /* WoCaoWeiboTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2533,14 +2517,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3B76BA001804335400B53C87 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3B76BA181804335500B53C87 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B76BA191804335500B53C87 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

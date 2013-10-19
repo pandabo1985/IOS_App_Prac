@@ -17,3 +17,7 @@
 #define kAppKey @"270517240"
 #define kAppSecret @"8bdf05b31e2ecae4f0e526f19d3c892f"
 #define kAppRedirectURI @"https://api.weibo.com/oauth2/default.html"
+
+//颜色
+#define Color(r,g,b,a) [UIColor colorWithRed:r green:g blue:b alpha:a]
+#define kNavigationBarTitleLale @"kNavigationBarTitleLale"

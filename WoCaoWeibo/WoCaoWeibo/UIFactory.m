@@ -27,4 +27,10 @@
     return [themeImage autorelease];
 }
 
++(ThemeLabel *)createLable:(NSString *)colorName
+{
+    ThemeLabel *themeLabel =[[ThemeLabel alloc] initWithColorName:colorName];
+    return [themeLabel autorelease];
+}
+
 @end

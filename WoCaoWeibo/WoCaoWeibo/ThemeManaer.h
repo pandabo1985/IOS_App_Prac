@@ -13,9 +13,12 @@
 
 @property(nonatomic, retain) NSString *themeName;//当前使用的主题名称
 @property(nonatomic,retain) NSDictionary *themesPlist;
+@property(nonatomic,retain)NSDictionary *fontColorPlist;
 
 
 + (ThemeManaer *)shareInstance;
 //获得当前主题下的图片
 -(UIImage *)getThemeImage:(NSString *)imageName;
+
+-(UIColor *)getColorWithName:(NSString *)name;
 @end

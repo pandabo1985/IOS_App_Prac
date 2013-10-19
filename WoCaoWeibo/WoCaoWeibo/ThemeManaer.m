@@ -32,7 +32,7 @@ static ThemeManaer *singleton = nil;
     if (self) {
         NSString *themePath = [[NSBundle mainBundle] pathForResource:@"theme" ofType:@"plist"];
         self.themesPlist = [NSDictionary dictionaryWithContentsOfFile:themePath];
-        //deafaul nil
+        
         self.themeName = nil;
     }
     return self;
@@ -62,6 +62,39 @@ static ThemeManaer *singleton = nil;
     NSString *imagePath = [themePath stringByAppendingPathComponent:imageName];
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     return image;
+}
+
+
+-(UIColor *)getColorWithName:(NSString *)name
+{
+    if (name.length == 0) {
+        return nil;
+    }
+   NSString *rgb = [self.fontColorPlist objectForKey:name];
+        NSArray *rgbs = [rgb componentsSeparatedByString:@","];
+    if (rgbs.count == 3) {
+        float r = [rgbs[0]floatValue];
+        float g = [rgbs[1]floatValue];
+        float b = [rgbs[2]floatValue];
+        UIColor *color = Color(r, g, b, 1);
+        return color;
+    }
+    return nil;
+}
+
+//切换主题时，会调用此方法设置主题名称
+-(void)setThemeName:(NSString *)themeName{
+    
+    if (self.themeName !=themeName) {
+        [self.themeName release];
+        self.themeName = [themeName copy];
+    }
+    
+    NSString *themeDir = [self getThemePath];
+    NSString *filePath = [themeDir stringByAppendingPathComponent:@"fontColor.plist"];
+    self.fontColorPlist = [NSDictionary dictionaryWithContentsOfFile:filePath];
+                          
+                          
 }
 
 #pragma mark -singleton setting

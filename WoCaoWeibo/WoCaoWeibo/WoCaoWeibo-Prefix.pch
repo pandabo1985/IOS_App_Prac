@@ -25,3 +25,5 @@
 #define ScreenWith  [UIScreen mainScreen].bounds.size.width
 
 #define kThemeDidChangeNotification @"kThemeDidChangeNotification"
+
+#import "CONSTS.h"
