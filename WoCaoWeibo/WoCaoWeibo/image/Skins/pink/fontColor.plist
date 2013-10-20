@@ -4,5 +4,7 @@
 <dict>
 	<key>kNavigationBarTitleLabel</key>
 	<string>124,135,160</string>
+	<key>kThemeListLabel</key>
+	<string>255,255,255</string>
 </dict>
 </plist>

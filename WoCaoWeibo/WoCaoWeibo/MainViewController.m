@@ -91,11 +91,20 @@
         [button addTarget:self action:@selector(selectedTab:) forControlEvents:UIControlEventTouchUpInside];
         [_tabbarView addSubview:button];
     }
+    
+    _sliderView = [[UIFactory createImageView:@"tabbar_slider.png"] retain];
+    _sliderView.backgroundColor = [UIColor clearColor];
+    _sliderView.frame = CGRectMake((64 - 15)/2, 5, 15, 44);
+    [_tabbarView addSubview:_sliderView];
 }
 
 -(void)selectedTab:(UIButton *)button
 {
     self.selectedIndex = button.tag;
+    float x = button.left + (button.width-_sliderView.width)/2;
+    [UIView animateWithDuration:0.2 animations:^{
+        _sliderView.left = x;
+    }];
 }
 
 #pragma mark -sinaWeibo delegate

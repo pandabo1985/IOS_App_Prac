@@ -14,8 +14,15 @@
 #import "RightViewController.h"
 #import "SinaWeibo.h"
 #import "CONSTS.h"
+#import "ThemeManaer.h"
 
 @implementation AppDelegate
+
+-(void)setTheme
+{
+   NSString *themeName =  [[NSUserDefaults standardUserDefaults] objectForKey:kThemeName];
+    [[ThemeManaer shareInstance] setThemeName:themeName];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -23,6 +30,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //设置主题
+    [self setTheme];
     
     _mainCtrl = [[MainViewController alloc] init];
    

@@ -14,6 +14,7 @@
 @interface MainViewController : UITabBarController<SinaWeiboDelegate>
 {
     UIView *_tabbarView;
+    UIImageView *_sliderView;
 }
 
 @end

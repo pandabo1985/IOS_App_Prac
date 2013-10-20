@@ -8,6 +8,7 @@
 
 #import "ThemeViewController.h"
 #import "ThemeManaer.h"
+#import  "UIFactory.h"
 
 @interface ThemeViewController ()
 
@@ -53,8 +54,29 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify] autorelease];
         
+        UILabel *textLabel = [UIFactory createLable:kNavigationBarTitleLale];
+        textLabel.frame = CGRectMake(10, 10, 200, 30);
+        textLabel.backgroundColor = [UIColor clearColor];
+        textLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+        textLabel.tag = 2013;
+        [cell.contentView addSubview:textLabel];
     }
-    cell.textLabel.text = themes[indexPath.row];
+    UILabel *textLabel = (UILabel *)[cell.contentView  viewWithTag:2013];
+    NSString *name = themes[indexPath.row];
+    textLabel.text = name;
+    NSString *themeName = [ThemeManaer shareInstance].themeName;
+    if (themeName == nil) {
+        themeName = @"默认";
+    }
+    
+    if ([themeName isEqualToString:name]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+//    cell.textLabel.text = themes[indexPath.row];
+  
     return cell;
 }
 
@@ -70,6 +92,14 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *themeName = themes[indexPath.row];
+    
+    if ([themeName isEqualToString:@"默认"]) {
+        themeName = nil;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:themeName forKey:kThemeName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [ThemeManaer shareInstance].themeName = themeName;
     [[NSNotificationCenter defaultCenter] postNotificationName:kThemeDidChangeNotification object:themeName];
     //刷新列表

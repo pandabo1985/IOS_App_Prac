@@ -27,3 +27,5 @@
 #define kThemeDidChangeNotification @"kThemeDidChangeNotification"
 
 #import "CONSTS.h"
+
+#import "UIViewExt.h"
