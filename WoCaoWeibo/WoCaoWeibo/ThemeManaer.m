@@ -14,7 +14,6 @@ static ThemeManaer *singleton = nil;
 @implementation ThemeManaer
 
 
-@synthesize themeName;
 @synthesize themesPlist;
 
 +(ThemeManaer *)shareInstance
@@ -85,15 +84,15 @@ static ThemeManaer *singleton = nil;
 //切换主题时，会调用此方法设置主题名称
 -(void)setThemeName:(NSString *)themeName{
     
-//    if (self.themeName !=themeName) {
-//        [self.themeName release];
-//        self.themeName = [themeName copy];
-//    }
-//    
-//    NSString *themeDir = [self getThemePath];
-//    NSString *filePath = [themeDir stringByAppendingPathComponent:@"fontColor.plist"];
-//    self.fontColorPlist = [NSDictionary dictionaryWithContentsOfFile:filePath];
-//                          
+    if (_themeName !=themeName) {
+        [_themeName release];
+        _themeName = [themeName copy];
+    }
+    
+    NSString *themeDir = [self getThemePath];
+    NSString *filePath = [themeDir stringByAppendingPathComponent:@"fontColor.plist"];
+    self.fontColorPlist = [NSDictionary dictionaryWithContentsOfFile:filePath];
+                          
     
 }
 
