@@ -19,6 +19,6 @@
 #define kAppRedirectURI @"https://api.weibo.com/oauth2/default.html"
 
 //颜色
-#define Color(r,g,b,a) [UIColor colorWithRed:r green:g blue:b alpha:a]
-#define kNavigationBarTitleLale @"kNavigationBarTitleLale"
+#define Color(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define kNavigationBarTitleLale @"kNavigationBarTitleLabel"
 #define kThemeListLabel          @"kThemeListLabel"

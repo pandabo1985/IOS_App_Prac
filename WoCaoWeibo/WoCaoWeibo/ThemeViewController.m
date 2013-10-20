@@ -72,6 +72,8 @@
     NSString *themeName = themes[indexPath.row];
     [ThemeManaer shareInstance].themeName = themeName;
     [[NSNotificationCenter defaultCenter] postNotificationName:kThemeDidChangeNotification object:themeName];
+    //刷新列表
+    [tableView reloadData];
 }
 
 

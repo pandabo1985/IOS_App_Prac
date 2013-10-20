@@ -69,7 +69,8 @@ static ThemeManaer *singleton = nil;
     if (name.length == 0) {
         return nil;
     }
-   NSString *rgb = [self.fontColorPlist objectForKey:name];
+    NSLog(@"%@==%@",_fontColorPlist,name);
+   NSString *rgb = [_fontColorPlist objectForKey:name];
         NSArray *rgbs = [rgb componentsSeparatedByString:@","];
     if (rgbs.count == 3) {
         float r = [rgbs[0]floatValue];

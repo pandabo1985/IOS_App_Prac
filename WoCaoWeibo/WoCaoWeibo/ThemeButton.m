@@ -38,6 +38,7 @@ highlighteBackgroundImageName:(NSString *)BackgroundHighlighteImageName
 {
     self = [super init];
     if (self) {
+         NSLog(@"%@",self);
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeNotification:) name:kThemeDidChangeNotification object:nil];
     }
     return self;

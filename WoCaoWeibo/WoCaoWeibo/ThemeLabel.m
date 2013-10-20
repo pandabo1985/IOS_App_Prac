@@ -12,11 +12,17 @@
 @implementation ThemeLabel
 
 
+- (void)dealloc {
+    [super dealloc];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_colorName release];
+}
 
 -(id)init
 {
     self = [super init];
     if (self !=nil) {
+        NSLog(@"%@",self);
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeNotification:) name:kThemeDidChangeNotification object:nil];
     }
     return self;
@@ -24,7 +30,7 @@
 
 -(id)initWithColorName:(NSString *)colorName
 {
-    self = [super init];
+    self = [self init];
     if (self !=nil) {
         self.colorName = colorName;
     }
@@ -42,7 +48,9 @@
 
 -(void)setColor
 {
+    NSLog(@"setColor == %@",_colorName);
     UIColor *textColor = [[ThemeManaer shareInstance] getColorWithName:_colorName];
+    NSLog(@"%@",textColor);
     self.textColor = textColor;
 }
 
