@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "WeiboModel.h"
 
 @interface HomeViewController ()
 
@@ -54,7 +55,15 @@
 }
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
 {
-    NSLog(@"%@",request);
+//    NSLog(@"%@",request);
+  NSArray *statues = [result objectForKey:@"statuses"];
+    NSMutableArray *weibos = [NSMutableArray arrayWithCapacity:statues.count];
+    for (NSDictionary *statuesDic in statues) {
+        WeiboModel *weibo = [[WeiboModel alloc] initWithDataDic:statuesDic];
+        [weibos addObject:weibo];
+        [weibo release];
+    }
+    NSLog(@"---%@",weibos);
 }
 
 #pragma mark -action
