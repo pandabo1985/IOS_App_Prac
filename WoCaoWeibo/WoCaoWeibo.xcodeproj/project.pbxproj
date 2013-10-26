@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B19904118180AD300FC9EE3 /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B19904018180AD300FC9EE3 /* WeiboCell.m */; };
+		3B19904418180B3900FC9EE3 /* WeiboView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B19904318180B3900FC9EE3 /* WeiboView.m */; };
 		3B5CBBAC180448C2006402C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5CBBAB180448C2006402C1 /* QuartzCore.framework */; };
 		3B5CBBAE18044A40006402C1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5CBBAD18044A40006402C1 /* CoreText.framework */; };
 		3B5CBD8518044DF9006402C1 /* btn_map_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B5CBBB018044DF5006402C1 /* btn_map_location.png */; };
@@ -546,6 +548,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B19903F18180AD300FC9EE3 /* WeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboCell.h; sourceTree = "<group>"; };
+		3B19904018180AD300FC9EE3 /* WeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboCell.m; sourceTree = "<group>"; };
+		3B19904218180B3900FC9EE3 /* WeiboView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboView.h; sourceTree = "<group>"; };
+		3B19904318180B3900FC9EE3 /* WeiboView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboView.m; sourceTree = "<group>"; };
 		3B5CBBAB180448C2006402C1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3B5CBBAD18044A40006402C1 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3B5CBBB018044DF5006402C1 /* btn_map_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_map_location.png; sourceTree = "<group>"; };
@@ -1796,6 +1802,10 @@
 				3B89FC7F1806D5D500D99134 /* RightViewController.h */,
 				3B89FC801806D5D500D99134 /* RightViewController.m */,
 				3B89FC811806D5D500D99134 /* RightViewController.xib */,
+				3B19903F18180AD300FC9EE3 /* WeiboCell.h */,
+				3B19904018180AD300FC9EE3 /* WeiboCell.m */,
+				3B19904218180B3900FC9EE3 /* WeiboView.h */,
+				3B19904318180B3900FC9EE3 /* WeiboView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -2468,6 +2478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B19904118180AD300FC9EE3 /* WeiboCell.m in Sources */,
 				3BE22D0218102299000DEBAF /* ThemeLabel.m in Sources */,
 				3B76BA471804367E00B53C87 /* UIImageView+WebCache.m in Sources */,
 				3BA52D23180A929900D4BB66 /* ThemeButton.m in Sources */,
@@ -2478,6 +2489,7 @@
 				3B89FC931806E69C00D99134 /* SinaWeibo.m in Sources */,
 				3B89FC821806D5D500D99134 /* RightViewController.m in Sources */,
 				3B76BA6518043D6D00B53C87 /* HomeViewController.m in Sources */,
+				3B19904418180B3900FC9EE3 /* WeiboView.m in Sources */,
 				3BBD1664180D839A00E94FDB /* ThemeImageView.m in Sources */,
 				3B76BA071804335500B53C87 /* AppDelegate.m in Sources */,
 				3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */,
