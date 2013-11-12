@@ -40,6 +40,7 @@
         return;
     }
     UIImage *image = [[ThemeManaer shareInstance] getThemeImage:_imageName];
+    image = [image stretchableImageWithLeftCapWidth:self.leftCapWith topCapHeight:self.topCapHeight];
     self.image= image;
 }
 -(void)setImageName:(NSString *)imageName

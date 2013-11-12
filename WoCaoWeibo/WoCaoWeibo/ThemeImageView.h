@@ -10,6 +10,9 @@
 
 @interface ThemeImageView : UIImageView
 
+@property(nonatomic,assign)int leftCapWith;
+@property(nonatomic,assign)int topCapHeight;
+
 @property(nonatomic,copy)NSString *imageName;
 -(id)initWithImageName:(NSString *)imageName;
 @end

@@ -22,7 +22,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self _initView];
+        _parseText = [NSMutableString string];
     }
     return self;
 }
@@ -44,6 +45,8 @@
     _repostBackgroudView = [UIFactory createImageView:@"timeline_retweet_background.png"];
     UIImage *image = [_repostBackgroudView.image stretchableImageWithLeftCapWidth:25 topCapHeight:10];
     _repostBackgroudView.image = image;
+    _repostBackgroudView.leftCapWith = 25;
+    _repostBackgroudView.topCapHeight = 10;
     _repostBackgroudView.backgroundColor =[UIColor clearColor];
     [self insertSubview:_repostBackgroudView atIndex:0];
     
@@ -61,8 +64,33 @@
         _repostView.isRepost = YES;
         [self addSubview:_repostView];
     }
+    
+    [self parseLink];
 }
-
+//解析超连接
+-(void)parseLink{
+    [_parseText setString:@""];
+    
+    NSString *text = _weiboModel.text;
+    NSString *regex = @"(@\\w+)|(#\\w+#)|(http(s)?://([A-Za-z0-9._-]+(/)?)*)";
+    NSArray *matchArray = [text componentsMatchedByRegex:regex];
+    
+    NSString *replacing = nil;
+    for(NSString *linkString in matchArray){
+        if ([linkString hasPrefix:@"@"]) {
+            replacing = [NSString stringWithFormat:@"<a href='user://%@'>%@</a>",linkString,linkString];
+        }else if([linkString hasPrefix:@"http"]){
+            replacing= [NSString stringWithFormat:@"<a href='http://%@'>%@</a>",linkString,linkString];
+        }else if([linkString hasPrefix:@"#"]){
+             replacing = [NSString stringWithFormat:@"<a href='topic://%@'>%@</a>",linkString,linkString];
+        }
+        if (replacing !=nil) {
+          text =[text stringByReplacingOccurrencesOfString:linkString withString:replacing];
+        }
+    }
+    
+    [_parseText appendString:text];
+}
 //展示数据，设置布局
 -(void)layoutSubviews
 {
@@ -74,7 +102,7 @@
     if (self.isRepost) {
         _textLabel.frame = CGRectMake(10, 10, self.width - 20, 0);
     }
-    _textLabel.text = _weiboModel.text;
+    _textLabel.text = _parseText;
    CGSize textSize =  _textLabel.optimumSize;
     _textLabel.height = textSize.height;
     //转发的微博_textlabel视图
@@ -149,6 +177,9 @@
     if (relWeibo != nil) {
         float repostHeight = [WeiboView getWeiboViewHeight:relWeibo isRepost:YES isDetai:isDetail];
         height +=repostHeight;
+    }
+    if (isRepost) {
+        height += 30;
     }
     return height;
 }

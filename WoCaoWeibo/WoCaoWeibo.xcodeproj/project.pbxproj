@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B04E69A183260D6009D15D6 /* RegexKitLite.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B04E698183260D6009D15D6 /* RegexKitLite.html */; };
+		3B04E69B183260D6009D15D6 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04E699183260D6009D15D6 /* RegexKitLite.m */; };
+		3B04E69D1832616B009D15D6 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B04E69C1832616B009D15D6 /* libicucore.dylib */; };
 		3B19904118180AD300FC9EE3 /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B19904018180AD300FC9EE3 /* WeiboCell.m */; };
 		3B19904418180B3900FC9EE3 /* WeiboView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B19904318180B3900FC9EE3 /* WeiboView.m */; };
 		3B5CBBAC180448C2006402C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5CBBAB180448C2006402C1 /* QuartzCore.framework */; };
@@ -548,6 +551,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B04E697183260D6009D15D6 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		3B04E698183260D6009D15D6 /* RegexKitLite.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RegexKitLite.html; sourceTree = "<group>"; };
+		3B04E699183260D6009D15D6 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		3B04E69C1832616B009D15D6 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		3B19903F18180AD300FC9EE3 /* WeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboCell.h; sourceTree = "<group>"; };
 		3B19904018180AD300FC9EE3 /* WeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboCell.m; sourceTree = "<group>"; };
 		3B19904218180B3900FC9EE3 /* WeiboView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboView.h; sourceTree = "<group>"; };
@@ -1128,6 +1135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B04E69D1832616B009D15D6 /* libicucore.dylib in Frameworks */,
 				3B5CBBAE18044A40006402C1 /* CoreText.framework in Frameworks */,
 				3B5CBBAC180448C2006402C1 /* QuartzCore.framework in Frameworks */,
 				3B76B9F91804335400B53C87 /* CoreGraphics.framework in Frameworks */,
@@ -1149,6 +1157,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B04E696183260D6009D15D6 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				3B04E697183260D6009D15D6 /* RegexKitLite.h */,
+				3B04E698183260D6009D15D6 /* RegexKitLite.html */,
+				3B04E699183260D6009D15D6 /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
 		3B5CBBAF18044DF5006402C1 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -1655,6 +1673,7 @@
 		3B76B9F51804335400B53C87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B04E69C1832616B009D15D6 /* libicucore.dylib */,
 				3B5CBBAD18044A40006402C1 /* CoreText.framework */,
 				3B5CBBAB180448C2006402C1 /* QuartzCore.framework */,
 				3B76B9F61804335400B53C87 /* Foundation.framework */,
@@ -1732,6 +1751,7 @@
 		3B76BA331804367E00B53C87 /* openSource */ = {
 			isa = PBXGroup;
 			children = (
+				3B04E696183260D6009D15D6 /* RegexKitLite */,
 				3B89FC841806E69C00D99134 /* sinaweibo_ios_sdk */,
 				3B76BA4C1804374100B53C87 /* DDMenu */,
 				3B76BA481804372D00B53C87 /* FontLabel */,
@@ -2288,6 +2308,7 @@
 				3B5CBF5418044DF9006402C1 /* 刷新.png in Resources */,
 				3B5CBE0D18044DF9006402C1 /* 033.png in Resources */,
 				3B5CBF4418044DF9006402C1 /* timeline_gif@2x.png in Resources */,
+				3B04E69A183260D6009D15D6 /* RegexKitLite.html in Resources */,
 				3B76BA6B18043E1F00B53C87 /* MessageViewController.xib in Resources */,
 				3B5CBF0218044DF9006402C1 /* navigationbar_messages@2x.png in Resources */,
 				3BA52D1A180A815D00D4BB66 /* Skins in Resources */,
@@ -2496,6 +2517,7 @@
 				3B76BA451804367E00B53C87 /* SDWebImageManager.m in Sources */,
 				3B76BA4F1804374100B53C87 /* DDMenuController.m in Sources */,
 				3B89FC951806E69C00D99134 /* SinaWeiboRequest.m in Sources */,
+				3B04E69B183260D6009D15D6 /* RegexKitLite.m in Sources */,
 				3B76BA7918043F2000B53C87 /* MoreViewController.m in Sources */,
 				3B76BA32180434C800B53C87 /* WXHLGlobalUICommon.m in Sources */,
 				3B89FC7D1806D5C800D99134 /* LeftViewController.m in Sources */,

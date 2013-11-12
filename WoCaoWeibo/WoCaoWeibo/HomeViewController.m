@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "WeiboModel.h"
+#import "WeiboCell.h"
+#import "WeiboView.h"
 
 @interface HomeViewController ()
 
@@ -63,9 +65,38 @@
         [weibos addObject:weibo];
         [weibo release];
     }
-    NSLog(@"---%@",weibos);
+//    NSLog(@"---%@",weibos);
+    self.data = weibos;
+    [self.tableView reloadData];
+    
 }
 
+#pragma mark -UITableView delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.data.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+ static NSString *identify = @"weiboCell";
+    WeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
+    if (cell == nil) {
+        cell = [[[WeiboCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify]autorelease];
+    }
+    WeiboModel *weibo = [self.data objectAtIndex:indexPath.row];
+    cell.weiboModel = weibo;
+    return cell;
+}
+
+-(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     WeiboModel *weibo = [self.data objectAtIndex:indexPath.row];
+    float height = [WeiboView getWeiboViewHeight:weibo isRepost:NO isDetai:NO];
+    height += 50;
+    return height;
+}
 #pragma mark -action
 -(void)bindAction:(UIBarButtonItem *)buttonItem
 {
@@ -83,6 +114,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 -(void)dealloc
 {

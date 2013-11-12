@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RTLabel.h"
+#import "ThemeImageView.h"
 
 #define KWEIWO_WITH_LIST (320 - 60) //微博列表的宽度
 #define KWEIWO_WITH_DETAIL 300   //微博详情页面的宽度
@@ -19,8 +20,9 @@
     @private
     RTLabel *_textLabel;//微博内容
     UIImageView *_image;//微博图片
-    UIImageView *_repostBackgroudView;//转发的微博背景
+    ThemeImageView *_repostBackgroudView;//转发的微博背景
     WeiboView *_repostView; //转发的微博试图
+    NSMutableString *_parseText;
     
 }
 

@@ -8,6 +8,9 @@
 // 首页控制器
 #import "BaseViewController.h"
 
-@interface HomeViewController : BaseViewController<SinaWeiboRequestDelegate>
+@interface HomeViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,SinaWeiboRequestDelegate>
+
+@property(nonatomic,retain)NSArray *data;
+@property(retain,nonatomic)IBOutlet UITableView *tableView;
 
 @end

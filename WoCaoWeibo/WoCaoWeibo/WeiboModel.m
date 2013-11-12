@@ -8,6 +8,7 @@
 
 #import "WeiboModel.h"
 #import "UserModel.h"
+#import "RegexKitLite.h"
 
 @implementation WeiboModel
 
