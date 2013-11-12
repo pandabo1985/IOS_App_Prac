@@ -11,6 +11,11 @@
 #import "WeiboModel.h"
 #import "UIImageView+WebCache.h"
 
+#define LIST_FONT 14.0f //列表微博内容字体
+#define  LIST_REPOST_FONT 13.0f//列表转发微博内容字体
+#define DETAIL_FONT 18.0f//微博详情文本字体
+#define DETAIL_REPOST_FONT 17.0f//详情微博内容转发字体
+
 @implementation WeiboView
 
 - (id)initWithFrame:(CGRect)frame
@@ -63,6 +68,8 @@
 {
     [super layoutSubviews];
     //微博内容_textLabel子视图
+   float fontSize =  [WeiboView getFontSize:self.isDetail isRepost:self.isRepost];
+    _textLabel.font = [UIFont systemFontOfSize:fontSize];
     _textLabel.frame = CGRectMake(0, 0, self.width, 20);
     if (self.isRepost) {
         _textLabel.frame = CGRectMake(10, 10, self.width - 20, 0);
@@ -74,8 +81,9 @@
     WeiboModel *respostWeibo = _weiboModel.relWeibo;
     if (respostWeibo !=nil) {
         _repostView.weiboModel = respostWeibo;
-#warning 高度待定
-        _repostView.frame = CGRectMake(0, _textLabel.bottom, self.width, 0);
+
+       float height =  [WeiboView getWeiboViewHeight:respostWeibo isRepost:YES isDetai:self.isDetail];
+        _repostView.frame = CGRectMake(0, _textLabel.bottom, self.width, height);
         _repostView.hidden = NO;
         
     }else{
@@ -98,9 +106,51 @@
         _repostBackgroudView.hidden = YES;
     }
 }
+
++(float)getFontSize:(BOOL)isDetail isRepost:(BOOL)isRespost
+{
+    float fontSize = 14.0f;
+    if (!isDetail && !isRespost) {
+        return LIST_FONT;
+    }else if(!isDetail && isRespost){
+        return LIST_REPOST_FONT;
+    }else if (isDetail && !isRespost){
+        return DETAIL_FONT;
+    }else if(isDetail && isRespost){
+        return DETAIL_REPOST_FONT;
+    }
+    return fontSize;
+}
 #pragma weibo height
-+(CGFloat)getWeiboViewHeight:(WeiboModel *)weiboModel isRepost:(BOOL)isRepost{
-    return 0;
++(CGFloat)getWeiboViewHeight:(WeiboModel *)weiboModel isRepost:(BOOL)isRepost isDetai:(BOOL)isDetail{
+    /**
+     *实现思路：计算每个子视图的高度，然后相加
+     */
+    float height = 0;
+    //计算微博内容text高度
+    RTLabel *textLabel = [[RTLabel alloc]initWithFrame:CGRectZero];
+    float fontSize = [WeiboView getFontSize:isDetail isRepost:isRepost];
+    textLabel.font = [UIFont systemFontOfSize:fontSize];
+    if (isDetail) {
+        textLabel.width = KWEIWO_WITH_DETAIL;
+    }else{
+        textLabel.width = KWEIWO_WITH_LIST;
+    }
+    
+    textLabel.text = weiboModel.text;
+    height +=textLabel.optimumSize.height;
+    //计算微博图片的高度
+    NSString *thumbmailImage = weiboModel.thumbnailImage;
+    if (thumbmailImage  != nil && [@"" isEqualToString:thumbmailImage]) {
+        height +=(80 + 10);
+    }
+    
+    WeiboModel *relWeibo =  weiboModel.relWeibo;
+    if (relWeibo != nil) {
+        float repostHeight = [WeiboView getWeiboViewHeight:relWeibo isRepost:YES isDetai:isDetail];
+        height +=repostHeight;
+    }
+    return height;
 }
 
 #pragma mark -RTLabel delegate
