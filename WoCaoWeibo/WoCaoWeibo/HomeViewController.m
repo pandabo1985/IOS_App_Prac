@@ -49,8 +49,46 @@
 #pragma mark -load data
 -(void)loadWeiboData
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@"5" forKey:@"count"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@"10" forKey:@"count"];
     [self.sinaweibo requestWithURL:@"statuses/home_timeline.json" params:params httpMethod:@"GET" delegate:self];
+}
+//下拉加载最新微博
+-(void)pullDownData{
+    if (self.topWeiBoID.length == 0) {
+        NSLog(@"微博id为空");
+        return;
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"20", @"count",self.topWeiBoID,@"since_id",nil];
+    [self.sinaweibo requestWithURL:@"statuses/home_timeline.json" params:params httpMethod:@"GET" block:^(id resut){
+        [self pullDownFinishData:resut];
+    }];
+}
+
+-(void)pullDownFinishData:(id) result{
+
+    NSArray *statues = [result objectForKey:@"statuses"];
+    NSMutableArray *weibosnew = [NSMutableArray arrayWithCapacity:statues.count];
+    for (NSDictionary *statuesDic in statues) {
+        WeiboModel *weibo = [[WeiboModel alloc] initWithDataDic:statuesDic];
+        [weibosnew addObject:weibo];
+        [weibo release];
+    }
+    
+    if (weibosnew.count > 0) {
+        WeiboModel *topWeiBo = [weibosnew objectAtIndex:0];
+        self.topWeiBoID = [topWeiBo.weiboId  stringValue];
+    }
+    
+    [weibosnew addObjectsFromArray:self.weibos];
+    self.weibos = weibosnew;
+    self.tableView.data = weibosnew;
+    //刷新UI
+    [self.tableView reloadData];
+    //弹回下拉
+    [self.tableView doneLoadingTableViewData];
+    //显示更新的数目
+    int updateCount = [statues count];
+    NSLog(@"下拉更新条数： %d",updateCount);
 }
 
 #pragma mark -SinaWeiboRequestDelegate
@@ -58,6 +96,7 @@
 {
     NSLog(@"网络加载失败：%@",error);
 }
+//网络加载完成
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
 {
 //    NSLog(@"%@",request);
@@ -70,6 +109,14 @@
     }
 //    NSLog(@"---%@",weibos);
     self.tableView.data = weibos;
+    self.weibos = weibos;
+    
+    //保存第一个微博ID
+    if (weibos.count>0) {
+        WeiboModel *topWeiBo = [weibos objectAtIndex:0];
+        self.topWeiBoID = [topWeiBo.weiboId stringValue];
+    }
+    
     [self.tableView reloadData];
     
 }
@@ -78,7 +125,8 @@
 //下拉
 -(void)pullDown:(BaseTableView *)tableView{
     NSLog(@"请求网络数据：");
-    [tableView performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3];
+    [self pullDownData];
+//    [tableView performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3];
 }
 
 //上拉
