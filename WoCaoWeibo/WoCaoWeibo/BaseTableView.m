@@ -58,6 +58,13 @@
     return cell;
 }
 
+-(void)tableView:(BaseTableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.eventDelegate respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
+        [self.eventDelegate tableView:self didDeselectRowAtIndexPath:indexPath];
+    }
+}
+
 #pragma mark -
 #pragma mark 下拉刷新的相关方法
 
@@ -96,7 +103,10 @@
 	[self reloadTableViewDataSource];
     
     //停止加载，弹回下拉
-	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+//	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+    if ([self.eventDelegate respondsToSelector:@selector(pullDown:)]) {
+    [self.eventDelegate pullDown:self];
+    }
 	
 }
 

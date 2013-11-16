@@ -35,6 +35,7 @@
     self.navigationItem.leftBarButtonItem =[logoutItem autorelease];
    
     _tableView = [[WeiboTableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWith, ScreenHeight-20-49-44)style:UITableViewStylePlain];
+    _tableView.eventDelegate = self;
     [self.view addSubview:_tableView];
     //判断是否验证
     if (self.sinaweibo.isAuthValid) {
@@ -71,6 +72,24 @@
     self.tableView.data = weibos;
     [self.tableView reloadData];
     
+}
+
+#pragma mark UITableViewEventDelegate
+//下拉
+-(void)pullDown:(BaseTableView *)tableView{
+    NSLog(@"请求网络数据：");
+    [tableView performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3];
+}
+
+//上拉
+-(void)pullUp:(BaseTableView *)tableView
+{
+    
+}
+//选中一个cell
+-(void)tableView:(BaseTableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"选中 cell:");
 }
 
 #pragma mark -action

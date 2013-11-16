@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 #import "WeiboTableView.h"
 
-@interface HomeViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,SinaWeiboRequestDelegate>
+@interface HomeViewController : BaseViewController<SinaWeiboRequestDelegate,UITableViewEventDelegate>
 
 
 @property(retain,nonatomic)IBOutlet WeiboTableView *tableView;
