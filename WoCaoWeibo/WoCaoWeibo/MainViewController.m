@@ -16,6 +16,9 @@
 #import "BaseNavigationController.h"
 #import "ThemeButton.h"
 #import "UIFactory.h"
+#import "SinaWeibo.h"
+#import "AppDelegate.h"
+
 
 
 @interface MainViewController ()
@@ -39,8 +42,10 @@
     [super viewDidLoad];
     [self _initViewController];
     [self _initTabbarView];
+    
+    //每隔60秒钟请求最新数据接口
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -98,6 +103,52 @@
     [_tabbarView addSubview:_sliderView];
 }
 
+-(void) refreshUnReadView:(NSDictionary *)result{
+    //新微博未读数
+    NSNumber *status = [result objectForKey:@"status"];
+    if (_bageView == nil) {
+        _bageView = [UIFactory createImageView:@"main_badge.png"];
+        _bageView.frame = CGRectMake(64 - 20, 5, 20, 20);
+        [_tabbarView addSubview:_bageView];
+        UILabel *badgeLabel = [[UILabel alloc] initWithFrame:_bageView.bounds];
+        badgeLabel.textAlignment = NSTextAlignmentCenter;
+        badgeLabel.backgroundColor = [UIColor clearColor];
+
+        badgeLabel.font = [UIFont boldSystemFontOfSize:13.0f];
+        badgeLabel.textColor = [UIColor purpleColor];
+        badgeLabel.tag = 100;
+        [_bageView addSubview:badgeLabel];
+        [badgeLabel release];
+    }
+    
+    int n = [status intValue];
+    if (n>0) {
+          UILabel *bageLabel = (UILabel *)[_bageView viewWithTag:100];
+        if (n>99) {
+            n = 99;
+        }
+        bageLabel.text = [NSString stringWithFormat:@"%d",n];
+        _bageView.hidden = NO;
+    }else{
+        _bageView.hidden =YES;
+    }
+  
+    
+    
+}
+#pragma mark -loaddata
+-(void)loadUnReadData{
+    AppDelegate *appDelgate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    SinaWeibo *sinaWeibo = appDelgate.sinaweibo;
+    [sinaWeibo requestWithURL:@"remind/unread_count.json" params:nil httpMethod:@"GET" block:^(id reulst){
+      
+        [self refreshUnReadView:reulst];
+    }];
+}
+
+
+
+#pragma mark -action
 -(void)selectedTab:(UIButton *)button
 {
     self.selectedIndex = button.tag;
@@ -107,6 +158,9 @@
     }];
 }
 
+-(void)timerAction:(NSTimer *) timer{
+    [self loadUnReadData];
+}
 #pragma mark -sinaWeibo delegate
 - (void)sinaweiboDidLogIn:(SinaWeibo *)sinaweibo
 {
@@ -139,6 +193,5 @@
 {
     
 }
-
 
 @end

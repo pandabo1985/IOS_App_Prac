@@ -15,6 +15,7 @@
 {
     UIView *_tabbarView;
     UIImageView *_sliderView;
+    UIImageView *_bageView;
 }
 
 @end
