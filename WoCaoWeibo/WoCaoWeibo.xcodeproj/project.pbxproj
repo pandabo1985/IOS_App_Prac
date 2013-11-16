@@ -517,6 +517,16 @@
 		3B76BA7518043EE800B53C87 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B76BA7318043EE800B53C87 /* DiscoverViewController.xib */; };
 		3B76BA7918043F2000B53C87 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B76BA7718043F2000B53C87 /* MoreViewController.m */; };
 		3B76BA7A18043F2000B53C87 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B76BA7818043F2000B53C87 /* MoreViewController.xib */; };
+		3B7C746218364A95003A89CD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C746118364A95003A89CD /* NSString+URLEncoding.m */; };
+		3B7C74651836F8A6003A89CD /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C74641836F8A6003A89CD /* BaseTableView.m */; };
+		3B7C746F1836F8FD003A89CD /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C74671836F8FD003A89CD /* blackArrow.png */; };
+		3B7C74701836F8FD003A89CD /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C74681836F8FD003A89CD /* blackArrow@2x.png */; };
+		3B7C74711836F8FD003A89CD /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C74691836F8FD003A89CD /* blueArrow.png */; };
+		3B7C74721836F8FD003A89CD /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C746A1836F8FD003A89CD /* blueArrow@2x.png */; };
+		3B7C74731836F8FD003A89CD /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C746C1836F8FD003A89CD /* EGORefreshTableHeaderView.m */; };
+		3B7C74741836F8FD003A89CD /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C746D1836F8FD003A89CD /* grayArrow.png */; };
+		3B7C74751836F8FD003A89CD /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7C746E1836F8FD003A89CD /* grayArrow@2x.png */; };
+		3B7C74781836FCA3003A89CD /* WeiboTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C74771836FCA3003A89CD /* WeiboTableView.m */; };
 		3B89FC7D1806D5C800D99134 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC7B1806D5C800D99134 /* LeftViewController.m */; };
 		3B89FC7E1806D5C800D99134 /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B89FC7C1806D5C800D99134 /* LeftViewController.xib */; };
 		3B89FC821806D5D500D99134 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC801806D5D500D99134 /* RightViewController.m */; };
@@ -1091,6 +1101,20 @@
 		3B76BA7618043F2000B53C87 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		3B76BA7718043F2000B53C87 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		3B76BA7818043F2000B53C87 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		3B7C746018364A95003A89CD /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "../../../../../../Users/pandabo/Movies/baiduyunpan/百度云同步盘/微博项目视频/新浪微博项目代码课件/工具类和开源库/tools/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		3B7C746118364A95003A89CD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "../../../../../../Users/pandabo/Movies/baiduyunpan/百度云同步盘/微博项目视频/新浪微博项目代码课件/工具类和开源库/tools/NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		3B7C74631836F8A6003A89CD /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		3B7C74641836F8A6003A89CD /* BaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableView.m; sourceTree = "<group>"; };
+		3B7C74671836F8FD003A89CD /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		3B7C74681836F8FD003A89CD /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		3B7C74691836F8FD003A89CD /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		3B7C746A1836F8FD003A89CD /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		3B7C746B1836F8FD003A89CD /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		3B7C746C1836F8FD003A89CD /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		3B7C746D1836F8FD003A89CD /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		3B7C746E1836F8FD003A89CD /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		3B7C74761836FCA3003A89CD /* WeiboTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboTableView.h; sourceTree = "<group>"; };
+		3B7C74771836FCA3003A89CD /* WeiboTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboTableView.m; sourceTree = "<group>"; };
 		3B89FC7A1806D5C800D99134 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		3B89FC7B1806D5C800D99134 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		3B89FC7C1806D5C800D99134 /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
@@ -1721,6 +1745,7 @@
 		3B76BA251804337D00B53C87 /* Uitils */ = {
 			isa = PBXGroup;
 			children = (
+				3B7C74661836F8FD003A89CD /* EGOTableViewPullRefresh */,
 				3B76BA331804367E00B53C87 /* openSource */,
 				3B76BA26180433CB00B53C87 /* UIViewExt.h */,
 				3B76BA27180433CB00B53C87 /* UIViewExt.m */,
@@ -1751,6 +1776,8 @@
 		3B76BA331804367E00B53C87 /* openSource */ = {
 			isa = PBXGroup;
 			children = (
+				3B7C746018364A95003A89CD /* NSString+URLEncoding.h */,
+				3B7C746118364A95003A89CD /* NSString+URLEncoding.m */,
 				3B04E696183260D6009D15D6 /* RegexKitLite */,
 				3B89FC841806E69C00D99134 /* sinaweibo_ios_sdk */,
 				3B76BA4C1804374100B53C87 /* DDMenu */,
@@ -1806,6 +1833,8 @@
 				3B76BA5818043B9700B53C87 /* BaseViewController.m */,
 				3B76BA5A18043BF700B53C87 /* BaseNavigationController.h */,
 				3B76BA5B18043BF700B53C87 /* BaseNavigationController.m */,
+				3B7C74631836F8A6003A89CD /* BaseTableView.h */,
+				3B7C74641836F8A6003A89CD /* BaseTableView.m */,
 			);
 			name = BaseView;
 			sourceTree = "<group>";
@@ -1826,6 +1855,8 @@
 				3B19904018180AD300FC9EE3 /* WeiboCell.m */,
 				3B19904218180B3900FC9EE3 /* WeiboView.h */,
 				3B19904318180B3900FC9EE3 /* WeiboView.m */,
+				3B7C74761836FCA3003A89CD /* WeiboTableView.h */,
+				3B7C74771836FCA3003A89CD /* WeiboTableView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1871,6 +1902,21 @@
 				3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */,
 			);
 			name = More;
+			sourceTree = "<group>";
+		};
+		3B7C74661836F8FD003A89CD /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				3B7C74671836F8FD003A89CD /* blackArrow.png */,
+				3B7C74681836F8FD003A89CD /* blackArrow@2x.png */,
+				3B7C74691836F8FD003A89CD /* blueArrow.png */,
+				3B7C746A1836F8FD003A89CD /* blueArrow@2x.png */,
+				3B7C746B1836F8FD003A89CD /* EGORefreshTableHeaderView.h */,
+				3B7C746C1836F8FD003A89CD /* EGORefreshTableHeaderView.m */,
+				3B7C746D1836F8FD003A89CD /* grayArrow.png */,
+				3B7C746E1836F8FD003A89CD /* grayArrow@2x.png */,
+			);
+			path = EGOTableViewPullRefresh;
 			sourceTree = "<group>";
 		};
 		3B89FC841806E69C00D99134 /* sinaweibo_ios_sdk */ = {
@@ -2037,6 +2083,7 @@
 				3B5CBEDE18044DF9006402C1 /* 103.gif in Resources */,
 				3B5CBE8718044DF9006402C1 /* 074.gif in Resources */,
 				3B5CBE0818044DF9006402C1 /* 031@2x.png in Resources */,
+				3B7C74741836F8FD003A89CD /* grayArrow.png in Resources */,
 				3B5CBE4018044DF9006402C1 /* 050.png in Resources */,
 				3B5CBDBE18044DF9006402C1 /* 006.png in Resources */,
 				3B5CBF4A18044DF9006402C1 /* timeline_new_status_background@2x.png in Resources */,
@@ -2178,6 +2225,7 @@
 				3B5CBF5318044DF9006402C1 /* userinfo_header_separator@2x.png in Resources */,
 				3B5CBE9E18044DF9006402C1 /* 081@2x.png in Resources */,
 				3B5CBDF618044DF9006402C1 /* 025@2x.png in Resources */,
+				3B7C74721836F8FD003A89CD /* blueArrow@2x.png in Resources */,
 				3B5CBEDA18044DF9006402C1 /* 101@2x.png in Resources */,
 				3B5CBDCA18044DF9006402C1 /* 010.png in Resources */,
 				3B5CBDFA18044DF9006402C1 /* 027.gif in Resources */,
@@ -2236,6 +2284,7 @@
 				3B5CBDC618044DF9006402C1 /* 009.gif in Resources */,
 				3B5CBED518044DF9006402C1 /* 100.gif in Resources */,
 				3B5CBE1418044DF9006402C1 /* 035@2x.png in Resources */,
+				3B7C74711836F8FD003A89CD /* blueArrow.png in Resources */,
 				3B5CBDB518044DF9006402C1 /* 003.png in Resources */,
 				3B5CBECF18044DF9006402C1 /* 098.gif in Resources */,
 				3B5CBDC018044DF9006402C1 /* 007.gif in Resources */,
@@ -2352,10 +2401,12 @@
 				3B5CBEC418044DF9006402C1 /* 094.png in Resources */,
 				3B5CBEC518044DF9006402C1 /* 094@2x.png in Resources */,
 				3B5CBE4918044DF9006402C1 /* 053.png in Resources */,
+				3B7C746F1836F8FD003A89CD /* blackArrow.png in Resources */,
 				3B5CBEB418044DF9006402C1 /* 089.gif in Resources */,
 				3B5CBDD418044DF9006402C1 /* 014.png in Resources */,
 				3B5CBDC818044DF9006402C1 /* 009@2x.png in Resources */,
 				3B5CBE4118044DF9006402C1 /* 050@2x.png in Resources */,
+				3B7C74701836F8FD003A89CD /* blackArrow@2x.png in Resources */,
 				3B5CBEAD18044DF9006402C1 /* 086@2x.png in Resources */,
 				3B5CBEC618044DF9006402C1 /* 095.gif in Resources */,
 				3B5CBE4E18044DF9006402C1 /* 055.gif in Resources */,
@@ -2384,6 +2435,7 @@
 				3B5CBEEC18044DF9006402C1 /* Icon.png in Resources */,
 				3B5CBEF818044DF9006402C1 /* navigationbar_background@2x.png in Resources */,
 				3B5CBF4318044DF9006402C1 /* timeline_gif.png in Resources */,
+				3B7C74751836F8FD003A89CD /* grayArrow@2x.png in Resources */,
 				3B5CBE4418044DF9006402C1 /* 051@2x.png in Resources */,
 				3B5CBDF118044DF9006402C1 /* 024.gif in Resources */,
 				3B5CBE1E18044DF9006402C1 /* 039.gif in Resources */,
@@ -2503,6 +2555,7 @@
 				3BE22D0218102299000DEBAF /* ThemeLabel.m in Sources */,
 				3B76BA471804367E00B53C87 /* UIImageView+WebCache.m in Sources */,
 				3BA52D23180A929900D4BB66 /* ThemeButton.m in Sources */,
+				3B7C74781836FCA3003A89CD /* WeiboTableView.m in Sources */,
 				3B76BA441804367E00B53C87 /* SDWebImageDownloader.m in Sources */,
 				3B76BA52180437A700B53C87 /* CustomCatagory.m in Sources */,
 				3B76BA4B1804372D00B53C87 /* RTLabel.m in Sources */,
@@ -2511,11 +2564,13 @@
 				3B89FC821806D5D500D99134 /* RightViewController.m in Sources */,
 				3B76BA6518043D6D00B53C87 /* HomeViewController.m in Sources */,
 				3B19904418180B3900FC9EE3 /* WeiboView.m in Sources */,
+				3B7C74731836F8FD003A89CD /* EGORefreshTableHeaderView.m in Sources */,
 				3BBD1664180D839A00E94FDB /* ThemeImageView.m in Sources */,
 				3B76BA071804335500B53C87 /* AppDelegate.m in Sources */,
 				3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */,
 				3B76BA451804367E00B53C87 /* SDWebImageManager.m in Sources */,
 				3B76BA4F1804374100B53C87 /* DDMenuController.m in Sources */,
+				3B7C74651836F8A6003A89CD /* BaseTableView.m in Sources */,
 				3B89FC951806E69C00D99134 /* SinaWeiboRequest.m in Sources */,
 				3B04E69B183260D6009D15D6 /* RegexKitLite.m in Sources */,
 				3B76BA7918043F2000B53C87 /* MoreViewController.m in Sources */,
@@ -2529,6 +2584,7 @@
 				3B76BA031804335400B53C87 /* main.m in Sources */,
 				3B89FC941806E69C00D99134 /* SinaWeiboAuthorizeView.m in Sources */,
 				3BD62EA8181563A100D3429A /* UserModel.m in Sources */,
+				3B7C746218364A95003A89CD /* NSString+URLEncoding.m in Sources */,
 				3B76BA7418043EE800B53C87 /* DiscoverViewController.m in Sources */,
 				3B76BA461804367E00B53C87 /* UIButton+WebCache.m in Sources */,
 				3B76BA2B1804345F00B53C87 /* UIUtils.m in Sources */,

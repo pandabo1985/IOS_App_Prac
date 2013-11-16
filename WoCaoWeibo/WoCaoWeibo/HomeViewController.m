@@ -8,8 +8,7 @@
 
 #import "HomeViewController.h"
 #import "WeiboModel.h"
-#import "WeiboCell.h"
-#import "WeiboView.h"
+
 
 @interface HomeViewController ()
 
@@ -34,7 +33,10 @@
    
     UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销账号" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction:)];
     self.navigationItem.leftBarButtonItem =[logoutItem autorelease];
-    
+   
+    _tableView = [[WeiboTableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWith, ScreenHeight-20-49-44)style:UITableViewStylePlain];
+    [self.view addSubview:_tableView];
+    //判断是否验证
     if (self.sinaweibo.isAuthValid) {
         [self loadWeiboData];
     }
@@ -66,37 +68,11 @@
         [weibo release];
     }
 //    NSLog(@"---%@",weibos);
-    self.data = weibos;
+    self.tableView.data = weibos;
     [self.tableView reloadData];
     
 }
 
-#pragma mark -UITableView delegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.data.count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
- static NSString *identify = @"weiboCell";
-    WeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
-    if (cell == nil) {
-        cell = [[[WeiboCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify]autorelease];
-    }
-    WeiboModel *weibo = [self.data objectAtIndex:indexPath.row];
-    cell.weiboModel = weibo;
-    return cell;
-}
-
--(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-     WeiboModel *weibo = [self.data objectAtIndex:indexPath.row];
-    float height = [WeiboView getWeiboViewHeight:weibo isRepost:NO isDetai:NO];
-    height += 50;
-    return height;
-}
 #pragma mark -action
 -(void)bindAction:(UIBarButtonItem *)buttonItem
 {
@@ -120,5 +96,7 @@
 -(void)dealloc
 {
     [super dealloc];
+    [_tableView release];
+    _tableView = nil;
 }
 @end

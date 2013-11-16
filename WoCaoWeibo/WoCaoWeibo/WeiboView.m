@@ -10,6 +10,7 @@
 #import "UIFactory.h"
 #import "WeiboModel.h"
 #import "UIImageView+WebCache.h"
+#import "NSString+URLEncoding.h"
 
 #define LIST_FONT 14.0f //列表微博内容字体
 #define  LIST_REPOST_FONT 13.0f//列表转发微博内容字体
@@ -70,23 +71,36 @@
 //解析超连接
 -(void)parseLink{
     [_parseText setString:@""];
+
+    //判断当前微博是否为转发微博
+    if (_isRepost) {
+       //将源微博作者拼接
+        //源微博作者昵称
+     NSString *nickName = _weiboModel.user.screen_name;
+     NSString *encodeName = [nickName URLEncodedString];
+        [_parseText appendFormat:@"<a href='user://%@‘>%@</a>:",encodeName,nickName];
+    }
     
     NSString *text = _weiboModel.text;
     NSString *regex = @"(@\\w+)|(#\\w+#)|(http(s)?://([A-Za-z0-9._-]+(/)?)*)";
     NSArray *matchArray = [text componentsMatchedByRegex:regex];
     
+    
     NSString *replacing = nil;
     for(NSString *linkString in matchArray){
+        
         if ([linkString hasPrefix:@"@"]) {
-            replacing = [NSString stringWithFormat:@"<a href='user://%@'>%@</a>",linkString,linkString];
+            replacing = [NSString stringWithFormat:@"<a href='user://%@'>%@</a>",[linkString URLEncodedString],linkString];
         }else if([linkString hasPrefix:@"http"]){
-            replacing= [NSString stringWithFormat:@"<a href='http://%@'>%@</a>",linkString,linkString];
+            
+            replacing= [NSString stringWithFormat:@"<a href='%@'>%@</a>",linkString,linkString];
         }else if([linkString hasPrefix:@"#"]){
-             replacing = [NSString stringWithFormat:@"<a href='topic://%@'>%@</a>",linkString,linkString];
+             replacing = [NSString stringWithFormat:@"<a href='topic://%@'>%@</a>",[linkString URLEncodedString],linkString];
         }
         if (replacing !=nil) {
           text =[text stringByReplacingOccurrencesOfString:linkString withString:replacing];
         }
+        
     }
     
     [_parseText appendString:text];
@@ -165,6 +179,9 @@
         textLabel.width = KWEIWO_WITH_LIST;
     }
     
+    if (isRepost) {
+        textLabel.width -=20;
+    }
     textLabel.text = weiboModel.text;
     height +=textLabel.optimumSize.height;
     //计算微博图片的高度
@@ -181,6 +198,7 @@
     if (isRepost) {
         height += 30;
     }
+    [textLabel release];
     return height;
 }
 
@@ -188,7 +206,20 @@
 
 - (void)rtLabel:(id)rtLabel didSelectLinkWithURL:(NSURL*)url
 {
+    NSString *absoluteString = [url absoluteString];
+    if ([absoluteString hasPrefix:@"user"]) {
+        NSString *urlstring =  [url host];
+        urlstring = [urlstring URLDecodedString];
+        NSLog(@"用户 ： %@",urlstring);
+    }else if([absoluteString hasPrefix:@"http"]){
+        NSLog(@"连接： %@",absoluteString);
+    }else if([absoluteString hasPrefix:@"topic"]){
+        NSString *urlstring = [url host];
+        urlstring = [urlstring URLDecodedString];
+        NSLog(@"话题 ： %@",urlstring);
+    }
     
+  
 }
 
 @end

@@ -7,10 +7,11 @@
 //
 // 首页控制器
 #import "BaseViewController.h"
+#import "WeiboTableView.h"
 
 @interface HomeViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,SinaWeiboRequestDelegate>
 
-@property(nonatomic,retain)NSArray *data;
-@property(retain,nonatomic)IBOutlet UITableView *tableView;
+
+@property(retain,nonatomic)IBOutlet WeiboTableView *tableView;
 
 @end

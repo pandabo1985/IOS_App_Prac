@@ -10,6 +10,8 @@
 #import "WeiboView.h"
 #import "WeiboModel.h"
 #import "UIImageView+WebCache.h"
+#import "UIUtils.h"
+#import "RegexKitLite.h"
 
 
 @implementation WeiboCell
@@ -71,6 +73,12 @@
     
     _weiboView = [[WeiboView alloc] initWithFrame:CGRectZero];
     [self.contentView addSubview:_weiboView];
+    //背景颜色选中图片
+    UIView *selectedBackgroundView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
+    selectedBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"statusdetail_cell_sepatator"]];
+    self.selectedBackgroundView = selectedBackgroundView;
+    [selectedBackgroundView release];
+    
 }
 
 
@@ -90,5 +98,46 @@
     float h = [WeiboView getWeiboViewHeight:_weiboModel isRepost:NO isDetai:NO];
     _weiboView.frame = CGRectMake(50, _nickLabel.bottom+10, KWEIWO_WITH_LIST,h);
     
+    //发布时间
+    NSString *createDate = _weiboModel.createDate;
+    if (createDate != nil) {
+        _createLabe.hidden = NO;
+//        NSDate *date = [UIUtils dateFromFomate:createDate formate:@"E M d HH:mm:ss Z yyyy"];
+//        NSString *datestring = [UIUtils stringFromFomate:date formate:@"MM-dd HH:mm"];
+//        _createLabe.text = datestring;
+        _createLabe.text = [UIUtils fomateString:createDate];
+        
+        _createLabe.frame = CGRectMake(50, self.height - 20, 100, 20);
+        [_createLabe sizeToFit];
+    }else{
+        _createLabe.hidden = YES;
+    }
+   
+    //微博来源
+    NSString *source = _weiboModel.source;
+    NSString *ret = [self parseSouce:source];
+    if (ret !=nil) {
+        _sourceLabe.hidden = NO;
+        _sourceLabe.text = [NSString stringWithFormat:@"来自：%@",ret];
+        _sourceLabe.frame = CGRectMake(_createLabe.right+8, _createLabe.top, 100, 20);
+        [_sourceLabe sizeToFit];
+    }else{
+        _sourceLabe.hidden = YES;
+    }
+    
+}
+
+-(NSString *)parseSouce:(NSString *)source{
+    NSString *regex = @">\\w+<";
+        NSArray *array = [source componentsMatchedByRegex:regex];
+    if (array.count > 0) {
+        NSString *ret = [array objectAtIndex:0];
+        NSRange range;
+        range.location = 1;
+        range.length = ret.length -2;
+        NSString *resultstring = [ret substringWithRange:range];
+        return resultstring;
+    }
+    return nil;
 }
 @end
