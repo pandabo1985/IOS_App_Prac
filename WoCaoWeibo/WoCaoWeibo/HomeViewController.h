@@ -8,8 +8,12 @@
 // 首页控制器
 #import "BaseViewController.h"
 #import "WeiboTableView.h"
+@class ThemeImageView;
 
 @interface HomeViewController : BaseViewController<SinaWeiboRequestDelegate,UITableViewEventDelegate>
+{
+    ThemeImageView *barView;
+}
 
 
 @property(retain,nonatomic)IBOutlet WeiboTableView *tableView;

@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "WeiboModel.h"
+#import "UIFactory.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 
 @interface HomeViewController ()
@@ -44,7 +46,53 @@
     
 }
 
-
+//新微博的数量
+-(void)showNewWeiboCount:(int)count{
+    if (barView == nil) {
+        barView = [[UIFactory createImageView:@"timeline_new_status_background.png"] retain];
+        UIImage *image = [barView.image stretchableImageWithLeftCapWidth:5 topCapHeight:5];
+        barView.image = image;
+        barView.leftCapWith = 5;
+        barView.topCapHeight = 5;
+        barView.frame = CGRectMake(5, -40, ScreenWith-10, 40);
+        
+        [self.view addSubview:barView];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.tag = 2013;
+        label.font = [UIFont systemFontOfSize:16.0f];
+        label.textColor = [UIColor whiteColor];
+        label.backgroundColor = [UIColor clearColor];
+        [barView addSubview:label];
+        [label release];
+    }
+    if (count >0) {
+        UILabel *label = (UILabel *)[barView viewWithTag:2013];
+        label.text = [NSString stringWithFormat:@"%d条新微博",count];
+        [label sizeToFit];
+        label.origin = CGPointMake((barView.width - label.width)/20, (barView.height - label.height)/2);
+        
+        [UIView animateWithDuration:0.6 animations:^{
+            barView.top = 5;
+        } completion:^(BOOL finish){
+            if (finish) {
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:0.6];
+                barView.top = -40;
+                
+            }
+        }];
+        
+        NSString *filePaht = [[NSBundle mainBundle] pathForResource:@"msgcome" ofType:@"wav"];
+        NSURL *url = [NSURL fileURLWithPath:filePaht];
+        
+        SystemSoundID soundID;
+        AudioServicesCreateSystemSoundID((CFURLRef)url, &soundID);
+        AudioServicesPlaySystemSound(soundID);
+        
+    }
+}
+  
 
 #pragma mark -load data
 -(void)loadWeiboData
@@ -88,6 +136,7 @@
     [self.tableView doneLoadingTableViewData];
     //显示更新的数目
     int updateCount = [statues count];
+    [self showNewWeiboCount:updateCount];
     NSLog(@"下拉更新条数： %d",updateCount);
 }
 
@@ -165,5 +214,7 @@
     [super dealloc];
     [_tableView release];
     _tableView = nil;
+    [barView release];
+    barView = nil;
 }
 @end
