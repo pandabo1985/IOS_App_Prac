@@ -39,9 +39,11 @@
    
     _tableView = [[WeiboTableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWith, ScreenHeight-20-49-44)style:UITableViewStylePlain];
     _tableView.eventDelegate = self;
+    _tableView.hidden = YES;
     [self.view addSubview:_tableView];
     //判断是否验证
     if (self.sinaweibo.isAuthValid) {
+        
         [self loadWeiboData];
     }
     
@@ -101,6 +103,9 @@
 #pragma mark -load data
 -(void)loadWeiboData
 {
+    [super showLoanding:YES];
+//    [super showHUD:@"正在加载。。。" isDim:NO];
+    [super showHUD];
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@"10" forKey:@"count"];
     [self.sinaweibo requestWithURL:@"statuses/home_timeline.json" params:params httpMethod:@"GET" delegate:self];
 }
@@ -159,6 +164,12 @@
 //网络加载完成
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result
 {
+    //隐藏加载提示
+//    [super performSelector:@selector(showHUDComplete:) withObject:@"发布成功" afterDelay:10];
+//    [super showHUDComplete:@"加载完成"];
+    [super showLoanding:NO];
+    [super hideHUD];
+    self.tableView.hidden = NO;
 //    NSLog(@"%@",request);
   NSArray *statues = [result objectForKey:@"statuses"];
     NSMutableArray *weibos = [NSMutableArray arrayWithCapacity:statues.count];
