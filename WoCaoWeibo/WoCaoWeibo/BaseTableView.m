@@ -78,7 +78,9 @@
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self];
 }
 
-
+-(void)refreshData{
+    [_refreshHeaderView initLoading:self];
+}
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
 

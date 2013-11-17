@@ -10,6 +10,7 @@
 #import "WeiboModel.h"
 #import "UIFactory.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "MainViewController.h"
 
 
 @interface HomeViewController ()
@@ -91,6 +92,9 @@
         AudioServicesPlaySystemSound(soundID);
         
     }
+    //隐藏未读数目
+   MainViewController *mainCtrl = (MainViewController *) self.tabBarController;
+    [mainCtrl showBage:NO];
 }
   
 
@@ -138,6 +142,13 @@
     int updateCount = [statues count];
     [self showNewWeiboCount:updateCount];
     NSLog(@"下拉更新条数： %d",updateCount);
+}
+
+-(void)refreshWeibo{
+    //ui下拉
+    [self.tableView refreshData];
+    //取得数据
+    [self pullDownData];
 }
 
 #pragma mark -SinaWeiboRequestDelegate

@@ -52,6 +52,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)showBage:(BOOL)show{
+    _bageView.hidden = !show;
+}
+#pragma mark -UI
 //初始化控制器
 -(void)_initViewController{
     
@@ -108,7 +112,7 @@
     NSNumber *status = [result objectForKey:@"status"];
     if (_bageView == nil) {
         _bageView = [UIFactory createImageView:@"main_badge.png"];
-        _bageView.frame = CGRectMake(64 - 20, 5, 20, 20);
+        _bageView.frame = CGRectMake(64 - 25, 5, 20, 20);
         [_tabbarView addSubview:_bageView];
         UILabel *badgeLabel = [[UILabel alloc] initWithFrame:_bageView.bounds];
         badgeLabel.textAlignment = NSTextAlignmentCenter;
@@ -151,11 +155,20 @@
 #pragma mark -action
 -(void)selectedTab:(UIButton *)button
 {
-    self.selectedIndex = button.tag;
+  
     float x = button.left + (button.width-_sliderView.width)/2;
     [UIView animateWithDuration:0.2 animations:^{
         _sliderView.left = x;
     }];
+    
+    //是否是重复点击tab按钮
+    if (button.tag == self.selectedIndex && button.tag == 0) {
+        UINavigationController *homeNav = [self.viewControllers objectAtIndex:0];
+        HomeViewController *homeCtrl = [homeNav.viewControllers objectAtIndex:0];
+        [homeCtrl refreshWeibo];
+    }
+    
+      self.selectedIndex = button.tag;
 }
 
 -(void)timerAction:(NSTimer *) timer{

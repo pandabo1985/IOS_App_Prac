@@ -18,4 +18,6 @@
     UIImageView *_bageView;
 }
 
+-(void)showBage:(BOOL)show;
+
 @end
