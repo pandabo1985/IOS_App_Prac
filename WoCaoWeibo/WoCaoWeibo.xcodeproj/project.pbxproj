@@ -547,6 +547,8 @@
 		3BA52D28180A9F9F00D4BB66 /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */; };
 		3BA52D2B180AD5CC00D4BB66 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */; };
 		3BBD1664180D839A00E94FDB /* ThemeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD1663180D839A00E94FDB /* ThemeImageView.m */; };
+		3BBFCC4F183A4FF400C0C34C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFCC4D183A4FF400C0C34C /* DetailViewController.m */; };
+		3BBFCC50183A4FF400C0C34C /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFCC4E183A4FF400C0C34C /* DetailViewController.xib */; };
 		3BD62EA5181561EC00D3429A /* WeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD62EA4181561EC00D3429A /* WeiboModel.m */; };
 		3BD62EA8181563A100D3429A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD62EA7181563A100D3429A /* UserModel.m */; };
 		3BE22CFF18101606000DEBAF /* fontcolor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE22CFE18101606000DEBAF /* fontcolor.plist */; };
@@ -1152,6 +1154,9 @@
 		3BA52D2A180AD5CC00D4BB66 /* UIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFactory.m; sourceTree = "<group>"; };
 		3BBD1662180D839A00E94FDB /* ThemeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeImageView.h; sourceTree = "<group>"; };
 		3BBD1663180D839A00E94FDB /* ThemeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeImageView.m; sourceTree = "<group>"; };
+		3BBFCC4C183A4FF400C0C34C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3BBFCC4D183A4FF400C0C34C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3BBFCC4E183A4FF400C0C34C /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		3BD62EA3181561EC00D3429A /* WeiboModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboModel.h; sourceTree = "<group>"; };
 		3BD62EA4181561EC00D3429A /* WeiboModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboModel.m; sourceTree = "<group>"; };
 		3BD62EA6181563A100D3429A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
@@ -1867,6 +1872,9 @@
 				3B19904318180B3900FC9EE3 /* WeiboView.m */,
 				3B7C74761836FCA3003A89CD /* WeiboTableView.h */,
 				3B7C74771836FCA3003A89CD /* WeiboTableView.m */,
+				3BBFCC4C183A4FF400C0C34C /* DetailViewController.h */,
+				3BBFCC4D183A4FF400C0C34C /* DetailViewController.m */,
+				3BBFCC4E183A4FF400C0C34C /* DetailViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -2160,6 +2168,7 @@
 				3B5CBE7618044DF9006402C1 /* 068.png in Resources */,
 				3B5CBE0A18044DF9006402C1 /* 032.png in Resources */,
 				3B5CBDAD18044DF9006402C1 /* discover_default@2x.png in Resources */,
+				3BBFCC50183A4FF400C0C34C /* DetailViewController.xib in Resources */,
 				3B5CBD9918044DF9006402C1 /* compose_locatebutton_background_highlighted.png in Resources */,
 				3B5CBE2318044DF9006402C1 /* 040@2x.png in Resources */,
 				3B5CBEFF18044DF9006402C1 /* navigationbar_mentions.png in Resources */,
@@ -2592,6 +2601,7 @@
 				3BA52D27180A9F9F00D4BB66 /* ThemeViewController.m in Sources */,
 				3B76BA451804367E00B53C87 /* SDWebImageManager.m in Sources */,
 				3B76BA4F1804374100B53C87 /* DDMenuController.m in Sources */,
+				3BBFCC4F183A4FF400C0C34C /* DetailViewController.m in Sources */,
 				3B7C74651836F8A6003A89CD /* BaseTableView.m in Sources */,
 				3B89FC951806E69C00D99134 /* SinaWeiboRequest.m in Sources */,
 				3B04E69B183260D6009D15D6 /* RegexKitLite.m in Sources */,

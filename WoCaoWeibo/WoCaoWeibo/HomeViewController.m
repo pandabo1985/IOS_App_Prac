@@ -11,6 +11,7 @@
 #import "UIFactory.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "MainViewController.h"
+#import "DetailViewController.h"
 
 
 @interface HomeViewController ()
@@ -209,6 +210,14 @@
 -(void)tableView:(BaseTableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"选中 cell:");
+    WeiboModel *weibo = [self.weibos objectAtIndex:indexPath.row];
+    DetailViewController *detail = [[DetailViewController alloc]init];
+    detail.weiboModel = weibo;
+    [weibo release];
+    [self.navigationController pushViewController:detail animated:YES];
+    [detail release];
+    
+    
 }
 
 #pragma mark -action

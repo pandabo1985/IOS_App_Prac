@@ -93,6 +93,7 @@
 //        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //        ThemeButton *button = [[ThemeButton alloc] initWithImage:backImage highlighteImageName:heightImage];
         UIButton *button = [UIFactory createButton:backImage highlighted:heightImage];
+        button.showsTouchWhenHighlighted = YES;
         button.frame = CGRectMake((ScreenWith/5-30)/2+(i*ScreenWith/5),(49-30)/2, 30, 30);
         button.tag = i;
 //        [button setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];

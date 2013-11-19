@@ -57,8 +57,8 @@
     UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
     return cell;
 }
-
--(void)tableView:(BaseTableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//
+-(void)tableView:(BaseTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.eventDelegate respondsToSelector:@selector(tableView:didDeselectRowAtIndexPath:)]) {
         [self.eventDelegate tableView:self didDeselectRowAtIndexPath:indexPath];

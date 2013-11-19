@@ -33,6 +33,7 @@
     if (viewContollers.count > 1 && self.isBackButton) {
         
         UIButton *button = [UIFactory createButton:@"navigationbar_back.png" highlighted:@"navigationbar_back_highlighted.png"];
+        button.showsTouchWhenHighlighted = YES;
         button.frame = CGRectMake(0, 0, 24, 24);
         [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:button];
