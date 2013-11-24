@@ -48,6 +48,15 @@
     self.nickLabel.text = _weiboModel.user.screen_name;
     talbleHeadView.height  += 60;
     
+    //-----------创建微博视图--------
+    float h = [WeiboView getWeiboViewHeight:self.weiboModel isRepost:NO isDetai:YES];
+    _weiboView = [[WeiboView alloc] initWithFrame:CGRectMake(10, _userBarView.bottom+10, ScreenWith-20, h)];
+    _weiboView.isDetail = YES;
+    _weiboView.weiboModel = _weiboModel;
+    [talbleHeadView addSubview:_weiboView];
+    [_weiboView release];
+    talbleHeadView.height +=(h+10);
+    
     self.tableView.tableHeaderView = talbleHeadView;
     [talbleHeadView release];
    

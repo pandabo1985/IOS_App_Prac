@@ -24,7 +24,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self _initView];
-        _parseText = [NSMutableString string];
+//        _parseText = [NSMutableString string];//全局的变量应该自己管理内存，不能交给自动释放池。
+        _parseText = [[NSMutableString alloc] init];
     }
     return self;
 }
@@ -51,7 +52,7 @@
     _repostBackgroudView.backgroundColor =[UIColor clearColor];
     [self insertSubview:_repostBackgroudView atIndex:0];
     
-   
+    
     
 }
 -(void)setWeiboModel:(WeiboModel *)weiboModel
@@ -71,13 +72,13 @@
 //解析超连接
 -(void)parseLink{
     [_parseText setString:@""];
-
+    
     //判断当前微博是否为转发微博
     if (_isRepost) {
-       //将源微博作者拼接
+        //将源微博作者拼接
         //源微博作者昵称
-     NSString *nickName = _weiboModel.user.screen_name;
-     NSString *encodeName = [nickName URLEncodedString];
+        NSString *nickName = _weiboModel.user.screen_name;
+        NSString *encodeName = [nickName URLEncodedString];
         [_parseText appendFormat:@"<a href='user://%@‘>%@</a>:",encodeName,nickName];
     }
     
@@ -95,10 +96,10 @@
             
             replacing= [NSString stringWithFormat:@"<a href='%@'>%@</a>",linkString,linkString];
         }else if([linkString hasPrefix:@"#"]){
-             replacing = [NSString stringWithFormat:@"<a href='topic://%@'>%@</a>",[linkString URLEncodedString],linkString];
+            replacing = [NSString stringWithFormat:@"<a href='topic://%@'>%@</a>",[linkString URLEncodedString],linkString];
         }
         if (replacing !=nil) {
-          text =[text stringByReplacingOccurrencesOfString:linkString withString:replacing];
+            text =[text stringByReplacingOccurrencesOfString:linkString withString:replacing];
         }
         
     }
@@ -110,21 +111,21 @@
 {
     [super layoutSubviews];
     //微博内容_textLabel子视图
-   float fontSize =  [WeiboView getFontSize:self.isDetail isRepost:self.isRepost];
+    float fontSize =  [WeiboView getFontSize:self.isDetail isRepost:self.isRepost];
     _textLabel.font = [UIFont systemFontOfSize:fontSize];
     _textLabel.frame = CGRectMake(0, 0, self.width, 20);
     if (self.isRepost) {
         _textLabel.frame = CGRectMake(10, 10, self.width - 20, 0);
     }
     _textLabel.text = _parseText;
-   CGSize textSize =  _textLabel.optimumSize;
+    CGSize textSize =  _textLabel.optimumSize;
     _textLabel.height = textSize.height;
     //转发的微博_textlabel视图
     WeiboModel *respostWeibo = _weiboModel.relWeibo;
     if (respostWeibo !=nil) {
         _repostView.weiboModel = respostWeibo;
-
-       float height =  [WeiboView getWeiboViewHeight:respostWeibo isRepost:YES isDetai:self.isDetail];
+        
+        float height =  [WeiboView getWeiboViewHeight:respostWeibo isRepost:YES isDetai:self.isDetail];
         _repostView.frame = CGRectMake(0, _textLabel.bottom, self.width, height);
         _repostView.hidden = NO;
         
@@ -132,13 +133,30 @@
         _repostView.hidden = YES;
     }
     //微博图片视图
-    NSString *thumbnailImage = _weiboModel.thumbnailImage;
-    if (thumbnailImage !=nil &&[@"" isEqualToString:thumbnailImage]) {
-        _image.hidden = NO;
-        _image.frame = CGRectMake(10, _textLabel.bottom, 70, 80);
-        [_image setImageWithURL:[NSURL URLWithString:thumbnailImage]];
+    
+    if (self.isDetail) {
+        
+        //中等图，微博详情
+        NSString *bmiddleImage = _weiboModel.bmiddleImage;
+        if (bmiddleImage !=nil &&[@"" isEqualToString:bmiddleImage]) {
+            _image.hidden = NO;
+            _image.frame = CGRectMake(10, _textLabel.bottom, 280, 200);
+            [_image setImageWithURL:[NSURL URLWithString:bmiddleImage]];
+        }else{
+            _image.hidden = YES;
+        }
+
+        
     }else{
-        _image.hidden = YES;
+        //缩略图
+        NSString *thumbnailImage = _weiboModel.thumbnailImage;
+        if (thumbnailImage !=nil &&[@"" isEqualToString:thumbnailImage]) {
+            _image.hidden = NO;
+            _image.frame = CGRectMake(10, _textLabel.bottom, 70, 80);
+            [_image setImageWithURL:[NSURL URLWithString:thumbnailImage]];
+        }else{
+            _image.hidden = YES;
+        }
     }
     //转发微博视图的背景
     if (self.isRepost){
@@ -185,10 +203,22 @@
     textLabel.text = weiboModel.text;
     height +=textLabel.optimumSize.height;
     //计算微博图片的高度
-    NSString *thumbmailImage = weiboModel.thumbnailImage;
-    if (thumbmailImage  != nil && [@"" isEqualToString:thumbmailImage]) {
-        height +=(80 + 10);
+    
+    if (isDetail) {
+        
+        //中等图，微博详情
+        NSString *bmiddleImage = weiboModel.bmiddleImage;
+        if (bmiddleImage  != nil && [@"" isEqualToString:bmiddleImage]) {
+            height +=(200 + 10);
+        }
+    }else{
+        NSString *thumbmailImage = weiboModel.thumbnailImage;
+        if (thumbmailImage  != nil && [@"" isEqualToString:thumbmailImage]) {
+            height +=(80 + 10);
+        }
     }
+    
+   
     
     WeiboModel *relWeibo =  weiboModel.relWeibo;
     if (relWeibo != nil) {
@@ -219,7 +249,7 @@
         NSLog(@"话题 ： %@",urlstring);
     }
     
-  
+    
 }
 
 @end
