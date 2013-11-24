@@ -11,7 +11,7 @@
 
 
 
-@interface MainViewController : UITabBarController<SinaWeiboDelegate>
+@interface MainViewController : UITabBarController<SinaWeiboDelegate,UINavigationControllerDelegate>
 {
     UIView *_tabbarView;
     UIImageView *_sliderView;
@@ -19,5 +19,7 @@
 }
 
 -(void)showBage:(BOOL)show;
+
+-(void)showTabbar:(BOOL)show;
 
 @end

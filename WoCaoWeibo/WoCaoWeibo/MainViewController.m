@@ -44,7 +44,7 @@
     [self _initTabbarView];
     
     //每隔60秒钟请求最新数据接口
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -55,7 +55,33 @@
 -(void)showBage:(BOOL)show{
     _bageView.hidden = !show;
 }
+-(void)showTabbar:(BOOL)show{
+    [UIView animateWithDuration:0.35 animations:^{
+        if (show) {
+            _tabbarView.left = 0;
+        }else{
+            _tabbarView.left = -ScreenWith;
+        }
+    }];
+    
+    [self _resizeView:show];
+}
+
+
 #pragma mark -UI
+
+-(void)_resizeView:(BOOL)showTabbar{
+    for (UIView *subView in self.view.subviews) {
+        NSLog(@"subView == %@",subView);
+        if ([subView isKindOfClass:NSClassFromString(@"UITransitionView")]) {
+            if (showTabbar) {
+                subView.height = ScreenHeight-49-20;
+            }else {
+                subView.height = ScreenHeight-20;
+            }
+        }
+    }
+}
 //初始化控制器
 -(void)_initViewController{
     
@@ -70,6 +96,9 @@
     for (UIViewController *viewController in views) {
         BaseNavigationController *nav = [[BaseNavigationController alloc]  initWithRootViewController:viewController];
         [viewControllers addObject:nav];
+        
+        nav.delegate = self;
+        
         [nav release];
     }
     self.viewControllers = viewControllers;
@@ -206,6 +235,17 @@
 - (void)sinaweibo:(SinaWeibo *)sinaweibo accessTokenInvalidOrExpired:(NSError *)error
 {
     
+}
+
+#pragma mark -UINavigation delegate
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    //导航控制器子控制器的个数
+    int count = navigationController.viewControllers.count;
+    if (count == 2) {
+        [self showTabbar:NO];
+    }else if (count == 1){
+        [self showTabbar:YES];
+    }
 }
 
 @end

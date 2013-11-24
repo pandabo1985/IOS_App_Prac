@@ -11,6 +11,7 @@
 #import "WeiboModel.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+URLEncoding.h"
+#import "UIUtils.h"
 
 #define LIST_FONT 14.0f //列表微博内容字体
 #define  LIST_REPOST_FONT 13.0f//列表转发微博内容字体
@@ -64,6 +65,7 @@
     if (_repostView == nil) {
         _repostView = [[WeiboView alloc]initWithFrame:CGRectZero];
         _repostView.isRepost = YES;
+        _repostView.isDetail = self.isDetail;
         [self addSubview:_repostView];
     }
     
@@ -83,27 +85,7 @@
     }
     
     NSString *text = _weiboModel.text;
-    NSString *regex = @"(@\\w+)|(#\\w+#)|(http(s)?://([A-Za-z0-9._-]+(/)?)*)";
-    NSArray *matchArray = [text componentsMatchedByRegex:regex];
-    
-    
-    NSString *replacing = nil;
-    for(NSString *linkString in matchArray){
-        
-        if ([linkString hasPrefix:@"@"]) {
-            replacing = [NSString stringWithFormat:@"<a href='user://%@'>%@</a>",[linkString URLEncodedString],linkString];
-        }else if([linkString hasPrefix:@"http"]){
-            
-            replacing= [NSString stringWithFormat:@"<a href='%@'>%@</a>",linkString,linkString];
-        }else if([linkString hasPrefix:@"#"]){
-            replacing = [NSString stringWithFormat:@"<a href='topic://%@'>%@</a>",[linkString URLEncodedString],linkString];
-        }
-        if (replacing !=nil) {
-            text =[text stringByReplacingOccurrencesOfString:linkString withString:replacing];
-        }
-        
-    }
-    
+    text = [UIUtils parseLink:text];
     [_parseText appendString:text];
 }
 //展示数据，设置布局

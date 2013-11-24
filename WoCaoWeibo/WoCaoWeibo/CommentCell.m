@@ -47,6 +47,8 @@
     
     
      NSString *commentTexst = self.commentModel.text;
+    //解析替换超链接
+    commentTexst = [UIUtils parseLink:commentTexst];
     _commentLabel.text = commentTexst;
     _commentLabel.height = _commentLabel.optimumSize.height;
     
