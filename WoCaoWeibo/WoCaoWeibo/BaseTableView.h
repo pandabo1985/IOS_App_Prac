@@ -23,7 +23,7 @@
 
 @end
 
-@interface BaseTableView : UITableView<EGORefreshTableHeaderDelegate,UITabBarDelegate,UITableViewDataSource>
+@interface BaseTableView : UITableView<EGORefreshTableHeaderDelegate,UITabBarDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL _reloading;

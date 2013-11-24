@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "WeiboModel.h"
 #import "WeiboView.h"
+#import "CommentTableView.h"
+#import "CommentModel.h"
 
 @interface DetailViewController ()
 
@@ -31,6 +33,7 @@
 {
     [super viewDidLoad];
     [self _initView];
+    [self loadData];
     
 }
 
@@ -62,24 +65,38 @@
    
     
 }
+
+-(void)loadData{
+    NSString *weiboId = [_weiboModel.weiboId stringValue];
+    if (weiboId.length == 0) {
+        return;
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:weiboId forKey:@"id"];
+    [self.sinaweibo requestWithURL:@"comments/show.json" params:params httpMethod:@"GET" block:^(NSDictionary *ret){
+        [self loadDataFinish:ret];
+    
+    }];
+}
+
+-(void)loadDataFinish:(NSDictionary *)ret{
+    NSArray *array = [ret objectForKey:@"comments"];
+    NSMutableArray *comments = [NSMutableArray arrayWithCapacity:array.count];
+    for (NSDictionary *dic in array) {
+        CommentModel *commentModel = [[CommentModel alloc]initWithDataDic:dic];
+        [comments addObject:commentModel];
+        [commentModel release];
+    }
+    self.tableView.data = comments;
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 
 }
 
-#pragma mark -UITableView delegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    return cell;
-}
 
 - (void)dealloc {
     [_tableView release];

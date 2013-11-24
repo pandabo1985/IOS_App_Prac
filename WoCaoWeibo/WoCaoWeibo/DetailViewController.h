@@ -11,13 +11,14 @@
 
 @class WeiboModel;
 @class WeiboView;
+@class CommentTableView;
 
-@interface DetailViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>{
+@interface DetailViewController : BaseViewController{
     WeiboView *_weiboView;
 }
 
 @property(nonatomic,retain)WeiboModel *weiboModel;
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet CommentTableView *tableView;
 @property (retain, nonatomic) IBOutlet UIImageView *userImageView;
 @property (retain, nonatomic) IBOutlet UILabel *nickLabel;
 @property (retain, nonatomic) IBOutlet UIView *userBarView;
