@@ -43,10 +43,31 @@
     return h+40;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 40)];
+    view.backgroundColor = [UIColor whiteColor];
+    UILabel *commentCount = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 20)];
+    commentCount.font = [UIFont boldSystemFontOfSize:16.0f];
+    commentCount.textColor = [UIColor blueColor];
+     NSNumber *total =  [self.commentDic objectForKey:@"total_number"];
+    commentCount.text = [NSString stringWithFormat:@"评论：%@",total];
+    [view addSubview:commentCount];
+    [commentCount release];
+    UIImageView *separeView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 39, tableView.width, 1)];
+    separeView.image = [UIImage imageNamed:@"userinfo_header_separator.png"];
+    [view addSubview:separeView];
+    return [view autorelease];
+}
+
+-(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 40;
+}
 -(void)tableView:(BaseTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
 }
+
+
 
 
 @end

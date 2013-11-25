@@ -87,6 +87,7 @@
         [commentModel release];
     }
     self.tableView.data = comments;
+    self.tableView.commentDic = ret;
     [self.tableView reloadData];
 }
 
