@@ -34,6 +34,8 @@
 @property(nonatomic,assign)BOOL refreshHeader;
 @property(nonatomic,retain)NSArray *data;
 @property(nonatomic,assign) id<UITableViewEventDelegate> eventDelegate;
+
+@property(nonatomic,assign)BOOL isMore;//是否还有下一页
 - (void)doneLoadingTableViewData;
 
 -(void)refreshData;

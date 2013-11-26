@@ -148,6 +148,13 @@
         WeiboModel *topWeiBo = [weibosnew lastObject];
         self.lastWeBoID = [topWeiBo.weiboId  stringValue];
     }
+    
+    if (statues.count >= 20) {
+        self.tableView.isMore = YES;
+    }else{
+        self.tableView.isMore = NO;
+    }
+    
     [self.weibos addObjectsFromArray:weibosnew];
     //刷新UI
     self.tableView.data = self.weibos;
@@ -169,7 +176,7 @@
         WeiboModel *topWeiBo = [weibosnew objectAtIndex:0];
         self.topWeiBoID = [topWeiBo.weiboId  stringValue];
     }
-    
+  
     [weibosnew addObjectsFromArray:self.weibos];
     self.weibos = weibosnew;
     self.tableView.data = weibosnew;

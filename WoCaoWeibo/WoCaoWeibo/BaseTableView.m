@@ -42,6 +42,7 @@
     [activityView stopAnimating];
     
     self.tableFooterView = _moreButton;
+    self.isMore = YES;
 }
 
 //xib文件创建
@@ -98,13 +99,30 @@
 
 
 -(void)_stopLoadMore{
-    [_moreButton setTitle:@"上拉加载更多.." forState:UIControlStateNormal];
-    _moreButton.enabled = YES;
-    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2012];
-    [activityView stopAnimating];
+    if (self.data.count > 0) {
+        _moreButton.hidden = NO;
+        [_moreButton setTitle:@"上拉加载更多.." forState:UIControlStateNormal];
+        _moreButton.enabled = YES;
+        UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2012];
+        [activityView stopAnimating];
+        
+        if (!self.isMore) {
+            [_moreButton setTitle:@"加载完成！" forState:UIControlStateNormal];
+            _moreButton.enabled = NO;
+
+        }else {
+             _moreButton.enabled = YES;
+        }
+        
+    }else{
+        _moreButton.hidden = YES;
+    }
+    
+
 }
 
 -(void)_startLoadMore{
+   
     [_moreButton setTitle:@"正在加载..." forState:UIControlStateNormal];
     _moreButton.enabled = NO;
     UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2012];

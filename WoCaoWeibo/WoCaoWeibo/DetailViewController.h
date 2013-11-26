@@ -7,13 +7,15 @@
 //
 
 #import "BaseViewController.h"
+#import "CommentTableView.h"
 
 
 @class WeiboModel;
 @class WeiboView;
-@class CommentTableView;
 
-@interface DetailViewController : BaseViewController{
+
+
+@interface DetailViewController : BaseViewController<UITableViewEventDelegate>{
     WeiboView *_weiboView;
 }
 

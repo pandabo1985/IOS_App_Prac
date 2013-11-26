@@ -61,6 +61,7 @@
     talbleHeadView.height +=(h+10);
     
     self.tableView.tableHeaderView = talbleHeadView;
+    self.tableView.eventDelegate = self;
     [talbleHeadView release];
    
     
@@ -86,6 +87,13 @@
         [comments addObject:commentModel];
         [commentModel release];
     }
+    
+    if (array.count >=20) {
+        self.tableView.isMore = YES;
+    }else{
+        self.tableView.isMore = NO;
+    }
+    
     self.tableView.data = comments;
     self.tableView.commentDic = ret;
     [self.tableView reloadData];
@@ -97,6 +105,20 @@
 
 }
 
+
+#pragma mark -BaseTabelView delegate
+//下拉
+-(void)pullDown:(BaseTableView *)tableView{
+    [tableView performSelector:@selector(downloadTableViewData) withObject:nil afterDelay:2];
+}
+//上拉
+-(void)pullUp:(BaseTableView *)tableView{
+    [tableView performSelector:@selector(reloadData) withObject:nil afterDelay:2];
+}
+//选中一个cell
+-(void)tableView:(BaseTableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
 
 
 - (void)dealloc {
