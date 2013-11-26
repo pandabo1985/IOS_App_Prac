@@ -110,9 +110,21 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@"10" forKey:@"count"];
     [self.sinaweibo requestWithURL:@"statuses/home_timeline.json" params:params httpMethod:@"GET" delegate:self];
 }
+//上拉加载最新微博
+-(void)pullUpData{
+    if (self.topWeiBoID.length == 0) {
+        NSLog(@"微博id为空");
+        return;
+    }
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"20", @"count",self.lastWeBoID,@"max_id",nil];
+    [self.sinaweibo requestWithURL:@"statuses/home_timeline.json" params:params httpMethod:@"GET" block:^(id resut){
+        [self pullUpFinishData:resut];
+    }];
+}
+
 //下拉加载最新微博
 -(void)pullDownData{
-    if (self.topWeiBoID.length == 0) {
+    if (self.lastWeBoID.length == 0) {
         NSLog(@"微博id为空");
         return;
     }
@@ -121,6 +133,27 @@
         [self pullDownFinishData:resut];
     }];
 }
+
+-(void)pullUpFinishData:(id) result{
+    
+    NSArray *statues = [result objectForKey:@"statuses"];
+    NSMutableArray *weibosnew = [NSMutableArray arrayWithCapacity:statues.count];
+    for (NSDictionary *statuesDic in statues) {
+        WeiboModel *weibo = [[WeiboModel alloc] initWithDataDic:statuesDic];
+        [weibosnew addObject:weibo];
+        [weibo release];
+    }
+    
+    if (weibosnew.count > 0) {
+        WeiboModel *topWeiBo = [weibosnew lastObject];
+        self.lastWeBoID = [topWeiBo.weiboId  stringValue];
+    }
+    [self.weibos addObjectsFromArray:weibosnew];
+    //刷新UI
+    self.tableView.data = self.weibos;
+    [self.tableView reloadData];
+}
+
 
 -(void)pullDownFinishData:(id) result{
 
@@ -187,6 +220,9 @@
     if (weibos.count>0) {
         WeiboModel *topWeiBo = [weibos objectAtIndex:0];
         self.topWeiBoID = [topWeiBo.weiboId stringValue];
+        WeiboModel *lastWeiBo = [weibos lastObject];
+                     
+        self.lastWeBoID =[lastWeiBo.weiboId stringValue];
     }
     
     [self.tableView reloadData];
@@ -204,7 +240,7 @@
 //上拉
 -(void)pullUp:(BaseTableView *)tableView
 {
-    
+    [self pullUpData];
 }
 //选中一个cell
 -(void)tableView:(BaseTableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

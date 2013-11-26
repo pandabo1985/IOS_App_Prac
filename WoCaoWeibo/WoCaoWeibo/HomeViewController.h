@@ -19,6 +19,7 @@
 @property(retain,nonatomic)IBOutlet WeiboTableView *tableView;
 @property(nonatomic,copy)NSString *topWeiBoID;
 @property(nonatomic,retain)NSMutableArray *weibos;
+@property(nonatomic,copy)NSString *lastWeBoID;
 
 -(void)refreshWeibo;
 

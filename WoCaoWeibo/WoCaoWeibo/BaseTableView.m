@@ -28,6 +28,20 @@
     self.delegate = self;
     self.refreshHeader = YES;
     
+    _moreButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+    _moreButton.backgroundColor = [UIColor clearColor];
+    _moreButton.frame = CGRectMake(0, 0, ScreenWith, 40);
+    _moreButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+    [_moreButton setTitle:@"上拉加载更多..." forState:UIControlStateNormal];
+    [_moreButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [_moreButton addTarget:self action:@selector(loadMoreAction) forControlEvents:UIControlEventTouchUpInside];
+    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityView.tag = 2012;
+    activityView.frame = CGRectMake(100, 10, 20, 20);
+    [_moreButton addSubview:activityView];
+    [activityView stopAnimating];
+    
+    self.tableFooterView = _moreButton;
 }
 
 //xib文件创建
@@ -81,6 +95,30 @@
 -(void)refreshData{
     [_refreshHeaderView initLoading:self];
 }
+
+
+-(void)_stopLoadMore{
+    [_moreButton setTitle:@"上拉加载更多.." forState:UIControlStateNormal];
+    _moreButton.enabled = YES;
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2012];
+    [activityView stopAnimating];
+}
+
+-(void)_startLoadMore{
+    [_moreButton setTitle:@"正在加载..." forState:UIControlStateNormal];
+    _moreButton.enabled = NO;
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[_moreButton viewWithTag:2012];
+    [activityView startAnimating];
+}
+
+#pragma mark -action
+-(void)loadMoreAction{
+    if ([self.eventDelegate respondsToSelector:@selector(pullUp:)]) {
+        [self.eventDelegate pullUp:self];
+        [self _startLoadMore];
+    }
+}
+
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
 
@@ -126,10 +164,17 @@
 }
 
 
+-(void)reloadData{
+    [super reloadData];
+    [self _stopLoadMore];
+}
+
 -(void)dealloc{
     [super dealloc];
     [_refreshHeaderView release];
     _refreshHeaderView = nil;
+    [_moreButton release];
+    _moreButton = nil;
 }
 
 @end

@@ -27,6 +27,8 @@
 {
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL _reloading;
+    
+    UIButton *_moreButton;
 }
 
 @property(nonatomic,assign)BOOL refreshHeader;
