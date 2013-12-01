@@ -120,9 +120,9 @@
         
         //中等图，微博详情
         NSString *bmiddleImage = _weiboModel.bmiddleImage;
-        if (bmiddleImage !=nil &&[@"" isEqualToString:bmiddleImage]) {
+        if (bmiddleImage !=nil &&![@"" isEqualToString:bmiddleImage]) {
             _image.hidden = NO;
-            _image.frame = CGRectMake(10, _textLabel.bottom, 280, 200);
+            _image.frame = CGRectMake(10, _textLabel.bottom+10, 280, 200);
             [_image setImageWithURL:[NSURL URLWithString:bmiddleImage]];
         }else{
             _image.hidden = YES;
@@ -132,9 +132,9 @@
     }else{
         //缩略图
         NSString *thumbnailImage = _weiboModel.thumbnailImage;
-        if (thumbnailImage !=nil &&[@"" isEqualToString:thumbnailImage]) {
+        if (thumbnailImage !=nil &&![@"" isEqualToString:thumbnailImage]) {
             _image.hidden = NO;
-            _image.frame = CGRectMake(10, _textLabel.bottom, 70, 80);
+            _image.frame = CGRectMake(10, _textLabel.bottom+10, 70, 80);
             [_image setImageWithURL:[NSURL URLWithString:thumbnailImage]];
         }else{
             _image.hidden = YES;
@@ -190,12 +190,12 @@
         
         //中等图，微博详情
         NSString *bmiddleImage = weiboModel.bmiddleImage;
-        if (bmiddleImage  != nil && [@"" isEqualToString:bmiddleImage]) {
+        if (bmiddleImage  != nil && ![@"" isEqualToString:bmiddleImage]) {
             height +=(200 + 10);
         }
     }else{
         NSString *thumbmailImage = weiboModel.thumbnailImage;
-        if (thumbmailImage  != nil && [@"" isEqualToString:thumbmailImage]) {
+        if (thumbmailImage  != nil && ![@"" isEqualToString:thumbmailImage]) {
             height +=(80 + 10);
         }
     }
