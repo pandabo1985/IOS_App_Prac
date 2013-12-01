@@ -52,12 +52,12 @@
         UILabel *textLabel = [UIFactory createLable:kNavigationBarTitleLale];
           textLabel.frame = CGRectMake(10, 10, 200, 30);
         textLabel.backgroundColor = [UIColor clearColor];
-        textLabel.font = [UIFont systemFontOfSize:16.0f];
+        textLabel.font = [UIFont boldSystemFontOfSize:16.0f];
         textLabel.tag = 101;
         [cell.contentView addSubview:textLabel];
     }
     
-    UILabel *textLabel = (UILabel *)[tableView viewWithTag:101];
+    UILabel *textLabel = (UILabel *)[cell.contentView viewWithTag:101];
     NSString *name = browPic[indexPath.row];
     textLabel.text = name;
     return  cell;
