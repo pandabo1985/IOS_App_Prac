@@ -140,15 +140,36 @@
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
 
+//滑动时，实时调用此方法
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	
 	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
     
 }
 
+//手指停止拖拽的时候调用
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	
 	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+    
+    if (!self.isMore) {
+        return;
+    }
+    
+    float offset = scrollView.contentOffset.y;
+    float contentHeight = scrollView.contentSize.height;
+    //差值是scrollView的高度
+    float sub = contentHeight - offset;
+    if (scrollView.height -sub > 30) {
+        
+        [self _stopLoadMore];
+        
+        if ([self.eventDelegate respondsToSelector:@selector(pullUp:)]) {
+            [self.eventDelegate pullUp:self];
+        }
+    }
+    
 	
 }
 
