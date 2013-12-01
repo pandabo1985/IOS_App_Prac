@@ -34,6 +34,11 @@
 {
     [super viewDidLoad];
     [self loadThemeImage];
+    
+    UISwipeGestureRecognizer *swipGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipAction:)];
+    swipGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipGesture];
+    [swipGesture release];
 //	float version = WXHLOSVersion();
 ////    if (version >= 5.0) {
 ////        UIImage *image = [UIImage imageNamed:@"navigationbar_background.png"];
@@ -68,5 +73,13 @@
       [self.navigationBar setNeedsDisplay];
   }
     
+}
+
+-(void)swipAction:(UISwipeGestureRecognizer *)gesture{
+    if(self.viewControllers.count>1){
+        if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
+            [self popViewControllerAnimated:YES];
+        }
+    }
 }
 @end

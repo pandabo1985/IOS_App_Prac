@@ -132,4 +132,10 @@
     }
     [self.hub hide:YES afterDelay:1];
 }
+
+
+-(AppDelegate *)appDelegate{
+      AppDelegate *appDelgate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return appDelgate;
+}
 @end

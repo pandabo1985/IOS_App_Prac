@@ -10,6 +10,8 @@
 #import "SinaWeibo.h"
 #import "ThemeManaer.h"
 
+@class AppDelegate;
+
 @class MBProgressHUD;
 
 @interface BaseViewController : UIViewController
@@ -27,5 +29,6 @@
 -(void)showHUDComplete:(NSString *)title;
 -(void)showHUD;
 -(void)hideHUD;
+-(AppDelegate *)appDelegate;
 
 @end

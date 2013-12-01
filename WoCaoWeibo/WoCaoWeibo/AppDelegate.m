@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
-#import "DDMenuController.h"
+
 #import "LeftViewController.h"
 #import "RightViewController.h"
 #import "SinaWeibo.h"
@@ -17,6 +17,14 @@
 #import "ThemeManaer.h"
 
 @implementation AppDelegate
+
+-(void)dealloc{
+    [_window release];
+   
+    [_mainCtrl release];
+    _mainCtrl = nil;
+     [super dealloc];
+}
 
 -(void)setTheme
 {
@@ -35,18 +43,18 @@
     
     _mainCtrl = [[MainViewController alloc] init];
    
-    DDMenuController *menuCtrl = [[DDMenuController alloc]initWithRootViewController:_mainCtrl];
+    _menuCtrl = [[DDMenuController alloc]initWithRootViewController:_mainCtrl];
     
     LeftViewController *lefCtrl = [[LeftViewController alloc] init];
     RightViewController *rightCtrl = [[RightViewController alloc] init];
-    menuCtrl.leftViewController = lefCtrl;
-    menuCtrl.rightViewController =rightCtrl;
+    _menuCtrl.leftViewController = lefCtrl;
+    _menuCtrl.rightViewController =rightCtrl;
     
     [self _initSinaWeibo];
     
-    self.window.rootViewController = menuCtrl;
+    self.window.rootViewController = _menuCtrl;
    
-    [menuCtrl release];
+    [_menuCtrl release];
 
     return YES;
 }

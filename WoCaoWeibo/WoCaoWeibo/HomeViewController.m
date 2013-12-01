@@ -12,6 +12,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "MainViewController.h"
 #import "DetailViewController.h"
+#import "AppDelegate.h"
+
 
 
 @interface HomeViewController ()
@@ -133,6 +135,20 @@
         [self pullDownFinishData:resut];
     }];
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    //开启左右滑手势
+    [self.appDelegate.menuCtrl setEnableGesture:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super  viewWillDisappear:animated];
+    //关闭左右滑手势
+    [self.appDelegate.menuCtrl setEnableGesture:NO];
+}
+
 
 -(void)pullUpFinishData:(id) result{
     
