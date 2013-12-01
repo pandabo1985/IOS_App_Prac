@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "ThemeViewController.h"
+#import "BrowModeViewController.h"
 
 @interface MoreViewController ()
 
@@ -56,7 +57,9 @@
     if (indexPath.row == 0) {
          NSLog(@"initCellView =11111= cellForRowAtIndexPath==%d",indexPath.row);
         cell.textLabel.text = @"设置主题";
-    }    
+    }else if(indexPath.row == 1){
+        cell.textLabel.text = @"设置图片";
+    }
     return cell;
 }
 
@@ -75,6 +78,10 @@
         ThemeViewController *themeCtrl = [[ThemeViewController alloc] init];
         [self.navigationController pushViewController:themeCtrl animated:YES];
         [themeCtrl release];
+    }else if(indexPath.row ==1){
+        BrowModeViewController *browViewCtrl = [[BrowModeViewController alloc] init];
+        [self.navigationController pushViewController:browViewCtrl animated:YES];
+        [browViewCtrl release];
     }
 }
 

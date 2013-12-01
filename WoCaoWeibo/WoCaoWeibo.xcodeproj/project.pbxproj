@@ -482,6 +482,8 @@
 		3B5CBF5618044DF9006402C1 /* 后退.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B5CBD8218044DF9006402C1 /* 后退.png */; };
 		3B5CBF5718044DF9006402C1 /* 附近微博.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5CBD8318044DF9006402C1 /* 附近微博.jpg */; };
 		3B5CBF5818044DF9006402C1 /* 附近的人.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B5CBD8418044DF9006402C1 /* 附近的人.jpg */; };
+		3B7109D4184B61CE005BD045 /* BrowModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7109D2184B61CE005BD045 /* BrowModeViewController.m */; };
+		3B7109D5184B61CE005BD045 /* BrowModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7109D3184B61CE005BD045 /* BrowModeViewController.xib */; };
 		3B76B9F71804335400B53C87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B76B9F61804335400B53C87 /* Foundation.framework */; };
 		3B76B9F91804335400B53C87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B76B9F81804335400B53C87 /* CoreGraphics.framework */; };
 		3B76B9FB1804335400B53C87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B76B9FA1804335400B53C87 /* UIKit.framework */; };
@@ -1048,6 +1050,9 @@
 		3B5CBD8218044DF9006402C1 /* 后退.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "后退.png"; sourceTree = "<group>"; };
 		3B5CBD8318044DF9006402C1 /* 附近微博.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "附近微博.jpg"; sourceTree = "<group>"; };
 		3B5CBD8418044DF9006402C1 /* 附近的人.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "附近的人.jpg"; sourceTree = "<group>"; };
+		3B7109D1184B61CE005BD045 /* BrowModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowModeViewController.h; sourceTree = "<group>"; };
+		3B7109D2184B61CE005BD045 /* BrowModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowModeViewController.m; sourceTree = "<group>"; };
+		3B7109D3184B61CE005BD045 /* BrowModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowModeViewController.xib; sourceTree = "<group>"; };
 		3B76B9F31804335400B53C87 /* WoCaoWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoCaoWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B76B9F61804335400B53C87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B76B9F81804335400B53C87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1936,6 +1941,9 @@
 				3BA52D24180A9F9F00D4BB66 /* ThemeViewController.h */,
 				3BA52D25180A9F9F00D4BB66 /* ThemeViewController.m */,
 				3BA52D26180A9F9F00D4BB66 /* ThemeViewController.xib */,
+				3B7109D1184B61CE005BD045 /* BrowModeViewController.h */,
+				3B7109D2184B61CE005BD045 /* BrowModeViewController.m */,
+				3B7109D3184B61CE005BD045 /* BrowModeViewController.xib */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -2273,6 +2281,7 @@
 				3B5CBE9E18044DF9006402C1 /* 081@2x.png in Resources */,
 				3B5CBDF618044DF9006402C1 /* 025@2x.png in Resources */,
 				3B7C74721836F8FD003A89CD /* blueArrow@2x.png in Resources */,
+				3B7109D5184B61CE005BD045 /* BrowModeViewController.xib in Resources */,
 				3B5CBEDA18044DF9006402C1 /* 101@2x.png in Resources */,
 				3B5CBDCA18044DF9006402C1 /* 010.png in Resources */,
 				3B5CBDFA18044DF9006402C1 /* 027.gif in Resources */,
@@ -2640,6 +2649,7 @@
 				3B7D39DF1841A45100BB6E00 /* CommentCell.m in Sources */,
 				3B76BA7418043EE800B53C87 /* DiscoverViewController.m in Sources */,
 				3B76BA461804367E00B53C87 /* UIButton+WebCache.m in Sources */,
+				3B7109D4184B61CE005BD045 /* BrowModeViewController.m in Sources */,
 				3B76BA2B1804345F00B53C87 /* UIUtils.m in Sources */,
 				3B76BA5518043B0900B53C87 /* MainViewController.m in Sources */,
 				3BA52D2B180AD5CC00D4BB66 /* UIFactory.m in Sources */,
