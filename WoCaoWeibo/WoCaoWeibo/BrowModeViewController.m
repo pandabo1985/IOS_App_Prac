@@ -65,7 +65,19 @@
 
 #pragma mark- UITableDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    int mode = -1;
+    if (indexPath.row == 0) {
+        mode = LargeBrowMode;
+    }else if(indexPath.row ==1){
+        mode = SmallBrowMode;
+    }
     
+    [[NSUserDefaults standardUserDefaults] setInteger:mode forKey:kBrowMode];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kReloadWeboTableNotification object:nil];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)dealloc {

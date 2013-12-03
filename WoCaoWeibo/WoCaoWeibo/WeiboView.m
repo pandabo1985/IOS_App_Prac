@@ -92,6 +92,25 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
+   //微博内容
+    [self _renderLabel];
+    
+    //源微博_textlabel视图
+    [self _renderSourceWeiboView];
+    //微博图片视图
+    
+    [self _renderImage];
+    //转发微博视图的背景
+    if (self.isRepost){
+        _repostBackgroudView.frame = self.bounds;
+        _repostBackgroudView.hidden = NO;
+    }else{
+        _repostBackgroudView.hidden = YES;
+    }
+}
+
+-(void)_renderLabel
+{
     //微博内容_textLabel子视图
     float fontSize =  [WeiboView getFontSize:self.isDetail isRepost:self.isRepost];
     _textLabel.font = [UIFont systemFontOfSize:fontSize];
@@ -102,7 +121,9 @@
     _textLabel.text = _parseText;
     CGSize textSize =  _textLabel.optimumSize;
     _textLabel.height = textSize.height;
-    //转发的微博_textlabel视图
+}
+
+-(void)_renderSourceWeiboView{
     WeiboModel *respostWeibo = _weiboModel.relWeibo;
     if (respostWeibo !=nil) {
         _repostView.weiboModel = respostWeibo;
@@ -114,8 +135,9 @@
     }else{
         _repostView.hidden = YES;
     }
-    //微博图片视图
-    
+}
+
+-(void)_renderImage{
     if (self.isDetail) {
         
         //中等图，微博详情
@@ -127,27 +149,39 @@
         }else{
             _image.hidden = YES;
         }
-
+        
         
     }else{
-        //缩略图
-        NSString *thumbnailImage = _weiboModel.thumbnailImage;
-        if (thumbnailImage !=nil &&![@"" isEqualToString:thumbnailImage]) {
-            _image.hidden = NO;
-            _image.frame = CGRectMake(10, _textLabel.bottom+10, 70, 80);
-            [_image setImageWithURL:[NSURL URLWithString:thumbnailImage]];
-        }else{
-            _image.hidden = YES;
+        
+        int mode = [[NSUserDefaults standardUserDefaults] integerForKey:kBrowMode];
+        if (mode == 0) {
+            mode = SmallBrowMode;
         }
-    }
-    //转发微博视图的背景
-    if (self.isRepost){
-        _repostBackgroudView.frame = self.bounds;
-        _repostBackgroudView.hidden = NO;
-    }else{
-        _repostBackgroudView.hidden = YES;
+        if (mode == SmallBrowMode) {
+            //缩略图
+            NSString *thumbnailImage = _weiboModel.thumbnailImage;
+            if (thumbnailImage !=nil &&![@"" isEqualToString:thumbnailImage]) {
+                _image.hidden = NO;
+                _image.frame = CGRectMake(10, _textLabel.bottom+10, 70, 80);
+                [_image setImageWithURL:[NSURL URLWithString:thumbnailImage]];
+            }else{
+                _image.hidden = YES;
+            }
+        }else if (mode == LargeBrowMode){
+            //缩略图
+            NSString *thumbnailImage = _weiboModel.bmiddleImage;
+            if (thumbnailImage !=nil &&![@"" isEqualToString:thumbnailImage]) {
+                _image.hidden = NO;
+                _image.frame = CGRectMake(10, _textLabel.bottom+10, self.width -20, 180);
+                [_image setImageWithURL:[NSURL URLWithString:thumbnailImage]];
+            }else{
+                _image.hidden = YES;
+            }
+        }
+     
     }
 }
+
 
 +(float)getFontSize:(BOOL)isDetail isRepost:(BOOL)isRespost
 {
@@ -194,10 +228,25 @@
             height +=(200 + 10);
         }
     }else{
-        NSString *thumbmailImage = weiboModel.thumbnailImage;
-        if (thumbmailImage  != nil && ![@"" isEqualToString:thumbmailImage]) {
-            height +=(80 + 10);
+        int mode = [[NSUserDefaults standardUserDefaults] integerForKey:kBrowMode];
+        if (mode == 0) {
+            mode = SmallBrowMode;
         }
+        if (mode == SmallBrowMode) {
+            NSString *thumbmailImage = weiboModel.thumbnailImage;
+            if (thumbmailImage  != nil && ![@"" isEqualToString:thumbmailImage]) {
+                height +=(80 + 10);
+            }
+        }else{
+            //中等图，微博详情
+            NSString *bmiddleImage = weiboModel.bmiddleImage;
+            if (bmiddleImage  != nil && ![@"" isEqualToString:bmiddleImage]) {
+                height +=(180 + 10);
+            }
+
+        }
+        
+       
     }
     
    

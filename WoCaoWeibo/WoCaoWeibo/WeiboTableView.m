@@ -16,7 +16,7 @@
 -(id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     self = [super initWithFrame:frame style:style];
     if (self !=nil) {
-       
+       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:kReloadWeboTableNotification object:nil];
     }
     return self;
 }

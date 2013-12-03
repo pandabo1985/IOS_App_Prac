@@ -23,4 +23,13 @@
 #define kNavigationBarTitleLale @"kNavigationBarTitleLabel"
 #define kThemeListLabel          @"kThemeListLabel"
 
+//通知
+#define kReloadWeboTableNotification @"kReloadWeboTableNotification"
+
+//UserDefault keys
 #define kThemeName          @"kThemeName"
+#define kBrowMode           @"kBrowMode"
+#define LargeBrowMode 1 //大图浏览模式
+#define SmallBrowMode 2 //小兔浏览模式
+
+
