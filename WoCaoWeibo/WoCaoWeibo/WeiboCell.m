@@ -98,6 +98,9 @@
     float h = [WeiboView getWeiboViewHeight:_weiboModel isRepost:NO isDetai:NO];
     _weiboView.frame = CGRectMake(50, _nickLabel.bottom+10, KWEIWO_WITH_LIST,h);
     
+    //调用weiboview的重新布局方法。
+    [_weiboView setNeedsDisplay];
+    
     //发布时间
     NSString *createDate = _weiboModel.createDate;
     if (createDate != nil) {

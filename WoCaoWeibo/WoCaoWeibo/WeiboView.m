@@ -213,10 +213,16 @@
         textLabel.width = KWEIWO_WITH_LIST;
     }
     
+    NSString *weiboText = nil;
     if (isRepost) {
         textLabel.width -=20;
+        NSString *nickName = weiboModel.user.screen_name;
+        weiboText = [NSString stringWithFormat:@"%@:%@",nickName,weiboModel.text];
+        
+    }else {
+        weiboText = weiboModel.text;
     }
-    textLabel.text = weiboModel.text;
+    textLabel.text =weiboText;
     height +=textLabel.optimumSize.height;
     //计算微博图片的高度
     
