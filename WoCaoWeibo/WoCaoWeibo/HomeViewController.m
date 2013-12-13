@@ -49,6 +49,8 @@
     if (self.sinaweibo.isAuthValid) {
         
         [self loadWeiboData];
+    }else{
+        [self.sinaweibo logIn];
     }
     
 }
@@ -160,10 +162,11 @@
         [weibosnew addObject:weibo];
         [weibo release];
     }
-    
+  
     if (weibosnew.count > 0) {
         WeiboModel *topWeiBo = [weibosnew lastObject];
         self.lastWeBoID = [topWeiBo.weiboId  stringValue];
+        [weibosnew removeObjectAtIndex:0];
     }
     
     if (statues.count >= 20) {
@@ -210,6 +213,7 @@
 -(void)refreshWeibo{
     //ui下拉
     [self.tableView refreshData];
+    [self.tableView setHidden:NO];
     //取得数据
     [self pullDownData];
 }

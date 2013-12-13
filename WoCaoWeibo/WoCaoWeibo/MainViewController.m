@@ -85,13 +85,13 @@
 //初始化控制器
 -(void)_initViewController{
     
-    HomeViewController *home =[[[HomeViewController alloc] init] autorelease];
+    _home =[[HomeViewController alloc] init] ;
     MessageViewController *message = [[[MessageViewController alloc] init] autorelease];
     ProfileViewController *profile = [[[ProfileViewController alloc] init] autorelease];
     DiscoverViewController *discover = [[[DiscoverViewController alloc] init] autorelease];
     MoreViewController *more = [[[MoreViewController alloc] init] autorelease];
     
-    NSArray *views = @[home,message,profile,discover,more];
+    NSArray *views = @[_home,message,profile,discover,more];
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:5];
     for (UIViewController *viewController in views) {
         BaseNavigationController *nav = [[BaseNavigationController alloc]  initWithRootViewController:viewController];
@@ -193,9 +193,10 @@
     
     //是否是重复点击tab按钮
     if (button.tag == self.selectedIndex && button.tag == 0) {
-        UINavigationController *homeNav = [self.viewControllers objectAtIndex:0];
-        HomeViewController *homeCtrl = [homeNav.viewControllers objectAtIndex:0];
-        [homeCtrl refreshWeibo];
+//        UINavigationController *homeNav = [self.viewControllers objectAtIndex:0];
+//        HomeViewController *homeCtrl = [homeNav.viewControllers objectAtIndex:0];
+//        [homeCtrl refreshWeibo];
+        [_home refreshWeibo];
     }
     
       self.selectedIndex = button.tag;
@@ -215,6 +216,8 @@
                               sinaweibo.refreshToken, @"refresh_token", nil];
     [[NSUserDefaults standardUserDefaults] setObject:authData forKey:@"SinaWeiboAuthData"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [_home loadWeiboData];
+  
 }
 
 
@@ -223,6 +226,7 @@
 {
     //移除renzhengxinxi
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"SinaWeiboAuthData"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 - (void)sinaweiboLogInDidCancel:(SinaWeibo *)sinaweibo
 {
@@ -246,6 +250,13 @@
     }else if (count == 1){
         [self showTabbar:YES];
     }
+}
+
+- (void)dealloc
+{
+    [super dealloc];
+    [_home release];
+    _home = nil;
 }
 
 @end

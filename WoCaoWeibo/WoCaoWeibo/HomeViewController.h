@@ -22,5 +22,6 @@
 @property(nonatomic,copy)NSString *lastWeBoID;
 
 -(void)refreshWeibo;
+-(void)loadWeiboData;
 
 @end
