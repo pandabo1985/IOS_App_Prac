@@ -12,11 +12,14 @@
 #import "UIImageView+WebCache.h"
 #import "NSString+URLEncoding.h"
 #import "UIUtils.h"
+#import "UserViewController.h"
 
 #define LIST_FONT 14.0f //列表微博内容字体
 #define  LIST_REPOST_FONT 13.0f//列表转发微博内容字体
 #define DETAIL_FONT 18.0f//微博详情文本字体
 #define DETAIL_REPOST_FONT 17.0f//详情微博内容转发字体
+
+
 
 @implementation WeiboView
 
@@ -277,7 +280,9 @@
     if ([absoluteString hasPrefix:@"user"]) {
         NSString *urlstring =  [url host];
         urlstring = [urlstring URLDecodedString];
-        NSLog(@"用户 ： %@",urlstring);
+       
+        UserViewController *viewCtrl = [[UserViewController alloc]init];
+        [self.viewController.navigationController pushViewController:viewCtrl animated:YES];
     }else if([absoluteString hasPrefix:@"http"]){
         NSLog(@"连接： %@",absoluteString);
     }else if([absoluteString hasPrefix:@"topic"]){

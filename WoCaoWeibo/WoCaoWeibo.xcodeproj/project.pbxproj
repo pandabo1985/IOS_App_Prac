@@ -545,6 +545,7 @@
 		3B89FC931806E69C00D99134 /* SinaWeibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC8B1806E69C00D99134 /* SinaWeibo.m */; };
 		3B89FC941806E69C00D99134 /* SinaWeiboAuthorizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC8D1806E69C00D99134 /* SinaWeiboAuthorizeView.m */; };
 		3B89FC951806E69C00D99134 /* SinaWeiboRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B89FC901806E69C00D99134 /* SinaWeiboRequest.m */; };
+		3B92D205185DF1B000F34EC9 /* RectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92D204185DF1B000F34EC9 /* RectButton.m */; };
 		3BA52D1A180A815D00D4BB66 /* Skins in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D19180A815D00D4BB66 /* Skins */; };
 		3BA52D1E180A81F400D4BB66 /* ThemeManaer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA52D1D180A81F400D4BB66 /* ThemeManaer.m */; };
 		3BA52D20180A821C00D4BB66 /* theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BA52D1F180A821C00D4BB66 /* theme.plist */; };
@@ -559,6 +560,11 @@
 		3BD62EA8181563A100D3429A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD62EA7181563A100D3429A /* UserModel.m */; };
 		3BE22CFF18101606000DEBAF /* fontcolor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BE22CFE18101606000DEBAF /* fontcolor.plist */; };
 		3BE22D0218102299000DEBAF /* ThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE22D0118102299000DEBAF /* ThemeLabel.m */; };
+		3BED7FBF185DE4EB002CB1FD /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED7FBE185DE4EB002CB1FD /* UIView+Additions.m */; };
+		3BED7FC3185DE9F1002CB1FD /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED7FC1185DE9F1002CB1FD /* UserViewController.m */; };
+		3BED7FC4185DE9F1002CB1FD /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BED7FC2185DE9F1002CB1FD /* UserViewController.xib */; };
+		3BED7FC7185DEC66002CB1FD /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BED7FC6185DEC66002CB1FD /* UserInfoView.m */; };
+		3BED7FC9185DEC85002CB1FD /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BED7FC8185DEC85002CB1FD /* UserInfoView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1157,6 +1163,8 @@
 		3B89FC8F1806E69C00D99134 /* SinaWeiboRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaWeiboRequest.h; sourceTree = "<group>"; };
 		3B89FC901806E69C00D99134 /* SinaWeiboRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaWeiboRequest.m; sourceTree = "<group>"; };
 		3B89FC961806E79200D99134 /* CONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONSTS.h; sourceTree = "<group>"; };
+		3B92D203185DF1B000F34EC9 /* RectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectButton.h; sourceTree = "<group>"; };
+		3B92D204185DF1B000F34EC9 /* RectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectButton.m; sourceTree = "<group>"; };
 		3BA52D19180A815D00D4BB66 /* Skins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Skins; sourceTree = "<group>"; };
 		3BA52D1C180A81F400D4BB66 /* ThemeManaer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManaer.h; sourceTree = "<group>"; };
 		3BA52D1D180A81F400D4BB66 /* ThemeManaer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManaer.m; sourceTree = "<group>"; };
@@ -1180,6 +1188,14 @@
 		3BE22CFE18101606000DEBAF /* fontcolor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fontcolor.plist; sourceTree = "<group>"; };
 		3BE22D0018102299000DEBAF /* ThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeLabel.h; sourceTree = "<group>"; };
 		3BE22D0118102299000DEBAF /* ThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeLabel.m; sourceTree = "<group>"; };
+		3BED7FBD185DE4EB002CB1FD /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		3BED7FBE185DE4EB002CB1FD /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
+		3BED7FC0185DE9F1002CB1FD /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		3BED7FC1185DE9F1002CB1FD /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		3BED7FC2185DE9F1002CB1FD /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		3BED7FC5185DEC66002CB1FD /* UserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoView.h; sourceTree = "<group>"; };
+		3BED7FC6185DEC66002CB1FD /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoView.m; sourceTree = "<group>"; };
+		3BED7FC8185DEC85002CB1FD /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1761,6 +1777,8 @@
 		3B76B9FD1804335400B53C87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3B7C74661836F8FD003A89CD /* EGOTableViewPullRefresh */,
+				3B76BA331804367E00B53C87 /* openSource */,
 				3BA52D1B180A81C700D4BB66 /* ThemeManager */,
 				3B5CBBAF18044DF5006402C1 /* image */,
 				3B76BA251804337D00B53C87 /* Uitils */,
@@ -1775,8 +1793,6 @@
 		3B76BA251804337D00B53C87 /* Uitils */ = {
 			isa = PBXGroup;
 			children = (
-				3B7C74661836F8FD003A89CD /* EGOTableViewPullRefresh */,
-				3B76BA331804367E00B53C87 /* openSource */,
 				3B76BA26180433CB00B53C87 /* UIViewExt.h */,
 				3B76BA27180433CB00B53C87 /* UIViewExt.m */,
 				3B76BA291804345F00B53C87 /* UIUtils.h */,
@@ -1786,6 +1802,8 @@
 				3B76BA50180437A700B53C87 /* CustomCatagory.h */,
 				3B76BA51180437A700B53C87 /* CustomCatagory.m */,
 				3B89FC961806E79200D99134 /* CONSTS.h */,
+				3BED7FBD185DE4EB002CB1FD /* UIView+Additions.h */,
+				3BED7FBE185DE4EB002CB1FD /* UIView+Additions.m */,
 			);
 			name = Uitils;
 			sourceTree = "<group>";
@@ -1918,6 +1936,14 @@
 				3B76BA6C18043E7100B53C87 /* ProfileViewController.h */,
 				3B76BA6D18043E7100B53C87 /* ProfileViewController.m */,
 				3B76BA6E18043E7100B53C87 /* ProfileViewController.xib */,
+				3BED7FC0185DE9F1002CB1FD /* UserViewController.h */,
+				3BED7FC1185DE9F1002CB1FD /* UserViewController.m */,
+				3BED7FC2185DE9F1002CB1FD /* UserViewController.xib */,
+				3BED7FC5185DEC66002CB1FD /* UserInfoView.h */,
+				3BED7FC6185DEC66002CB1FD /* UserInfoView.m */,
+				3BED7FC8185DEC85002CB1FD /* UserInfoView.xib */,
+				3B92D203185DF1B000F34EC9 /* RectButton.h */,
+				3B92D204185DF1B000F34EC9 /* RectButton.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -2105,6 +2131,7 @@
 				3B5CBEA618044DF9006402C1 /* 084.png in Resources */,
 				3B5CBDFE18044DF9006402C1 /* 028.png in Resources */,
 				3B5CBDE318044DF9006402C1 /* 019.png in Resources */,
+				3BED7FC9185DEC85002CB1FD /* UserInfoView.xib in Resources */,
 				3B5CBDD318044DF9006402C1 /* 014.gif in Resources */,
 				3B5CBD9818044DF9006402C1 /* compose_locatebutton_background@2x.png in Resources */,
 				3B5CBE7018044DF9006402C1 /* 066.png in Resources */,
@@ -2162,6 +2189,7 @@
 				3B5CBE0F18044DF9006402C1 /* 034.gif in Resources */,
 				3B5CBE8018044DF9006402C1 /* 071@2x.png in Resources */,
 				3B5CBEF518044DF9006402C1 /* navigationbar_back_highlighted.png in Resources */,
+				3BED7FC4185DE9F1002CB1FD /* UserViewController.xib in Resources */,
 				3B5CBEF018044DF9006402C1 /* main_badge.png in Resources */,
 				3B5CBDB118044DF9006402C1 /* 002.gif in Resources */,
 				3B5CBDF018044DF9006402C1 /* 023@2x.png in Resources */,
@@ -2615,6 +2643,8 @@
 				3B7D39DA18419F9F00BB6E00 /* CommentTableView.m in Sources */,
 				3BA52D23180A929900D4BB66 /* ThemeButton.m in Sources */,
 				3B7C74781836FCA3003A89CD /* WeiboTableView.m in Sources */,
+				3B92D205185DF1B000F34EC9 /* RectButton.m in Sources */,
+				3BED7FC3185DE9F1002CB1FD /* UserViewController.m in Sources */,
 				3B76BA441804367E00B53C87 /* SDWebImageDownloader.m in Sources */,
 				3B76BA52180437A700B53C87 /* CustomCatagory.m in Sources */,
 				3B76BA4B1804372D00B53C87 /* RTLabel.m in Sources */,
@@ -2647,6 +2677,7 @@
 				3BD62EA8181563A100D3429A /* UserModel.m in Sources */,
 				3B7C746218364A95003A89CD /* NSString+URLEncoding.m in Sources */,
 				3B7D39DF1841A45100BB6E00 /* CommentCell.m in Sources */,
+				3BED7FBF185DE4EB002CB1FD /* UIView+Additions.m in Sources */,
 				3B76BA7418043EE800B53C87 /* DiscoverViewController.m in Sources */,
 				3B76BA461804367E00B53C87 /* UIButton+WebCache.m in Sources */,
 				3B7109D4184B61CE005BD045 /* BrowModeViewController.m in Sources */,
@@ -2658,6 +2689,7 @@
 				3B7D39E21841A80200BB6E00 /* CommentModel.m in Sources */,
 				3BA52D1E180A81F400D4BB66 /* ThemeManaer.m in Sources */,
 				3B89FC911806E69C00D99134 /* JSONKit.m in Sources */,
+				3BED7FC7185DEC66002CB1FD /* UserInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
