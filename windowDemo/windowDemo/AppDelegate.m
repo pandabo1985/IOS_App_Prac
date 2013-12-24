@@ -25,7 +25,7 @@
     normalWindow.windowLevel = UIWindowLevelNormal;
     [normalWindow makeKeyAndVisible];
     
-    CGRect windowRect = CGRectMake(100, 100, [[UIScreen mainScreen] bounds].size.width -100, [[UIScreen mainScreen] bounds].size.width -100);
+    CGRect windowRect = CGRectMake(100, 100, [[UIScreen mainScreen] bounds].size.width/2, [[UIScreen mainScreen] bounds].size.width /2);
     UIWindow *alertLevelWindow = [[UIWindow alloc] initWithFrame:windowRect];
     alertLevelWindow.windowLevel = UIWindowLevelAlert;
     alertLevelWindow.backgroundColor = [UIColor redColor];
