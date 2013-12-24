@@ -25,4 +25,6 @@
 @property(nonatomic,retain)WeiboModel *weiboModel;
 @property(nonatomic,retain)WeiboView *weiboView;
 
+
+
 @end

@@ -15,7 +15,8 @@
 
 
 
-@interface DetailViewController : BaseViewController<UITableViewEventDelegate>{
+@interface DetailViewController
+: BaseViewController<UITableViewEventDelegate>{
     WeiboView *_weiboView;
 }
 

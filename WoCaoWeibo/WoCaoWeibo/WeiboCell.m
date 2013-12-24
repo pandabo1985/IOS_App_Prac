@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIUtils.h"
 #import "RegexKitLite.h"
+#import "UserViewController.h"
 
 
 @implementation WeiboCell
@@ -37,6 +38,8 @@
     _userImage.layer.borderColor = [UIColor greenColor].CGColor;
     _userImage.layer.masksToBounds = YES;
     [self.contentView addSubview:_userImage];
+  
+    
     
     //昵称
     _nickLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -89,6 +92,7 @@
     _userImage.frame = CGRectMake(5, 5, 35, 35);
     NSString *userImageUrl = _weiboModel.user.profile_image_url;
     [_userImage setImageWithURL:[NSURL URLWithString:userImageUrl]];
+    
     //昵称
     _nickLabel.frame = CGRectMake(50, 5, 200, 20);
     _nickLabel.text = _weiboModel.user.screen_name;
@@ -143,4 +147,6 @@
     }
     return nil;
 }
+
+
 @end

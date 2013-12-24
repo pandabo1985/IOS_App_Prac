@@ -280,9 +280,7 @@
     if ([absoluteString hasPrefix:@"user"]) {
         NSString *urlstring =  [url host];
         urlstring = [urlstring URLDecodedString];
-       
-        UserViewController *viewCtrl = [[UserViewController alloc]init];
-        [self.viewController.navigationController pushViewController:viewCtrl animated:YES];
+     
     }else if([absoluteString hasPrefix:@"http"]){
         NSLog(@"连接： %@",absoluteString);
     }else if([absoluteString hasPrefix:@"topic"]){

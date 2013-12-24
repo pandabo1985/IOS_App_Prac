@@ -8,8 +8,12 @@
 
 #import "BaseViewController.h"
 #import "WeiboTableView.h"
+@class UserInfoView;
 
-@interface UserViewController : BaseViewController
+@interface UserViewController : BaseViewController<UITableViewEventDelegate>
+
+@property(nonatomic,copy)NSString *userName;
+@property(nonatomic,retain)UserInfoView *userInfo;
 
 @property (retain, nonatomic) IBOutlet WeiboTableView *tableView;
 
