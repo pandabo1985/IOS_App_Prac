@@ -8,6 +8,9 @@
 
 #include <stdio.h>
 #include<stdlib.h>
+#include "Funtion.h"
+
+
 
 int main(int argc, const char * argv[])
 {
@@ -45,6 +48,21 @@ int main(int argc, const char * argv[])
     printf("d[%d] = %d\n",i,d[i]);
     }
     
+    printf("-----------函数------------\n");
+    printf("sum = %d\n",sumOfNumber(5));
+    
+    printf("-----------实参形参------------\n");
+    int x = 2;
+    int y = 3;
+    swap(2,3);
+    printf("x = %d; y = %d\n",x,y);
+    
+    printf("-----------数组------------\n");
+    int e[5] = {2,4,5,6,7};
+    changeArray(e);
+    for (int i = 0; i < 5;  i++) {
+        printf("e[%d] = %d\n",i,e[i]);
+    }
     return 0;
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B34A30118741C2200FA6B57 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A30018741C2200FA6B57 /* main.c */; };
 		3B34A30318741C2200FA6B57 /* c_review.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B34A30218741C2200FA6B57 /* c_review.1 */; };
+		3BE54CC01875A113003ED6E5 /* Funtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE54CBF1875A113003ED6E5 /* Funtion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		3B34A2FD18741C2200FA6B57 /* c_review */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = c_review; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B34A30018741C2200FA6B57 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		3B34A30218741C2200FA6B57 /* c_review.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = c_review.1; sourceTree = "<group>"; };
+		3BE54CBE1875A113003ED6E5 /* Funtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Funtion.h; sourceTree = "<group>"; };
+		3BE54CBF1875A113003ED6E5 /* Funtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Funtion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				3B34A30018741C2200FA6B57 /* main.c */,
+				3BE54CBE1875A113003ED6E5 /* Funtion.h */,
+				3BE54CBF1875A113003ED6E5 /* Funtion.m */,
 				3B34A30218741C2200FA6B57 /* c_review.1 */,
 			);
 			path = c_review;
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B34A30118741C2200FA6B57 /* main.c in Sources */,
+				3BE54CC01875A113003ED6E5 /* Funtion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +231,7 @@
 				3B34A30818741C2200FA6B57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
