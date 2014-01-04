@@ -139,7 +139,13 @@ int main(int argc, const char * argv[])
         printf("%s的生日：%d年%d月%d日\n",stu.name,stu.myBirthday.year,stu.myBirthday.mounth,stu.myBirthday.day);
         
     }
-
+    printf("-----------C语言字符串操作常用库函数------\n");
+    checkFistAssigntStr("panda1985", 'a');
+    checkLastAssigntStr("panda1985", 'a');
+    char check[] = "panda1985";
+//    checkFistAppearStr("panda1985", "a");//第一个参数必须未字符串数组
+    checkFistAppearStr(check, "a");//第一个参数必须未字符串数数组（有点乱，搞混了）
+   changeStrToCharArray("panda1985");
     return 0;
 }
 

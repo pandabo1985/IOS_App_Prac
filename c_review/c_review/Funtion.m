@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
 int sumOfNumber(int sum){
     int ret = 0;
@@ -32,3 +33,32 @@ void changeArray(int e[5]){
         e[i] = i;
     }
 }
+
+void checkFistAssigntStr(char *string,char assign){
+    
+    char *ptr;
+    ptr = strchr(string,assign);
+    printf("在字符串%s中查找指定字符%c的第一个出现%s\n",string,assign,ptr);
+    
+}
+
+void checkLastAssigntStr(char *string,char assign){
+    char *ptr;
+    ptr = strrchr(string,assign);
+    printf("在字符串%s中查找指定字符%c的最后一个出现%s\n",string,assign,ptr);
+    
+}
+
+void checkFistAppearStr(char *string, const char *appear){
+     char *first;
+     first= strtok(string,appear);
+    printf("在字符串%s中查找指定字符的第一个出现%s\n",appear,first);
+}
+void changeStrToCharArray(char *string){
+    char ret[10];
+  
+    stpcpy(ret, string);
+    printf("%s\n", ret);
+   
+}
+
