@@ -175,6 +175,41 @@ int main(int argc, const char * argv[])
     *fuq = 2;
      printf("%d, %d \n",*fup,*fuq);
     
+    int swap_m = 3,swap_n = 5;
+    swap(swap_m, swap_n);
+    printf("%d, %d\n",swap_m,swap_n);
+    printf("swap_m = %p,swap_n=%p\n",swap_m,swap_n);
+    printf("swap_m = %d,swap_n=%d\n",&swap_m,&swap_n);
+    swap_p(&swap_m,&swap_n);
+    printf("%d, %d\n",swap_m,swap_n);
+    
+    printf("-----------栈\n-------由编译器自动分配和释放\n--在函数体中定义的变量通常在栈上\n---栈中的变量是先进后出--\n栈中的变量一般都是除了函数会被释放\n");
+    int *func_stack_p = funcStack();
+    printf("%d\n",*func_stack_p);
+    printf("%d\n",*func_stack_p);
+    printf("%d\n",*func_stack_p);
+    
+    printf("--------静态区\n全局变量和静态变量的存储是放在一块的，存储在静态区\n程序结束释放-\n");
+    int *func_stack_p_s = funcStack_static();
+    printf("%d\n",*func_stack_p_s);
+    printf("%d\n",*func_stack_p_s);
+    printf("%d\n",*func_stack_p_s);
+    
+    printf("--------结构体指针指向结构体变量的指针------\n");
+    student stu = {110};
+    student *student_p = &stu;
+    (*student_p).sore = 99.0f;
+    student_p->sex = 'm';
+    
+    student stus[5] = {0};
+    student *stu_q = stus;
+    stu_q[0].sex = 'f';
+    stu_q[0].sore = 78.0f;
+    stu_q[1].sore = 88.0f;
+    printf("%f,%f\n",stu_q[0].sore,stu_q[1].sore);
+    
+     printf("--------结构体内指针------\n");
+    
     return 0;
 }
 

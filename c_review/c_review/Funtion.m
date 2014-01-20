@@ -27,6 +27,15 @@ void swap(int x, int y)
   printf("end ** x = %d, y = %d\n",x,y);
     
 }
+void swap_p(int *x, int *y)
+{
+    printf("begin ** *x = %d, *y = %d\n",*x,*y);
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+    printf("end ** *x = %d, *y = %d\n",*x,*y);
+    
+}
 
 void changeArray(int e[5]){
     for (int i = 0; i < 5; i++) {
@@ -61,4 +70,18 @@ void changeStrToCharArray(char *string){
     printf("%s\n", ret);
    
 }
+int *funcStack(){
+    int m = 3;
+    int *n = &m;
+    printf("&m = %p\n",n);
+    printf("*n = %p\n",n);
+    return n;
+}
 
+int *funcStack_static(){
+   static int m = 3;
+    int *n = &m;
+    printf("&m = %p\n",n);
+    printf("*n = %p\n",n);
+    return n;
+}
