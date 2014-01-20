@@ -146,6 +146,35 @@ int main(int argc, const char * argv[])
 //    checkFistAppearStr("panda1985", "a");//第一个参数必须未字符串数组
     checkFistAppearStr(check, "a");//第一个参数必须未字符串数数组（有点乱，搞混了）
    changeStrToCharArray("panda1985");
+    
+    printf("-----------C语言指针变量------\n");
+    int z = 5;
+    int *p = NULL;//null 恒等于0
+    p = &z;
+    printf("%p,%p\n",&z,p);
+    printf("%d\n",*p);
+    
+    int ap = 3,bp = 6;
+    int *abp = &ap;
+    printf("%d\n",*abp);
+    abp = &bp;
+    printf("%d\n",*abp);
+    
+//    int *intp = NULL;
+//    double *doublep = NULL;
+//    char *charp = NULL;
+//    printf("%d, %d, %d \n",sizeof(int *),sizeof(double *),sizeof(char *));
+    
+      printf("-----------C语言指针赋值------\n");
+    int fui, *fup,*fuq;
+    fup = &fui;
+    fuq = fup;
+    printf("%d, %d \n",*fup,*fuq);
+    *fup = 1;
+     printf("%d, %d \n",*fup,*fuq);
+    *fuq = 2;
+     printf("%d, %d \n",*fup,*fuq);
+    
     return 0;
 }
 
