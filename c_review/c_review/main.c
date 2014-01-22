@@ -31,6 +31,17 @@ struct stu {
 typedef struct stu student;
 
 
+
+typedef struct {
+    char name[20];
+    int age;
+} student_new01;
+typedef struct {
+    char *name;
+    int age;
+} student_new02;
+
+
 int main(int argc, const char * argv[])
 {
 
@@ -209,6 +220,17 @@ int main(int argc, const char * argv[])
     printf("%f,%f\n",stu_q[0].sore,stu_q[1].sore);
     
      printf("--------结构体内指针------\n");
+    student_new01 stu_new01 = {0};
+    strcpy(stu_new01.name, "张三");//因为数组名是个常量指针，不可以改变它的值
+     printf("name=%s\n",stu_new01.name);
+//    stu_new01.name="张三";
+    student_new02 stu_new02={0};
+    stu_new02.name ="张三";//字符指针是一个指针变量，可以重复赋值。
+    printf("name=%s\n",stu_new02.name);
+    printf("--------最大值-----\n");
+    int maxint[]={1,3,4,5};
+    int max_int = maxarr(maxint, 4);
+    printf("max = %d\n",max_int);
     
     return 0;
 }

@@ -85,3 +85,13 @@ int *funcStack_static(){
     printf("*n = %p\n",n);
     return n;
 }
+
+int maxarr(int arr[],int length){
+    int max = 0;
+    for (int i =0 ; i < length; i++) {
+        if (arr[i]>max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
