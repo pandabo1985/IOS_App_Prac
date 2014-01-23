@@ -232,6 +232,29 @@ int main(int argc, const char * argv[])
     int max_int = maxarr(maxint, 4);
     printf("max = %d\n",max_int);
     
+     printf("--------栈---系统分配和释放，函数体中定义的变量通常在栈上，栈中的先进后出---\n");
+    int stack_a = 3;
+    int stack_b = 5;
+    printf("satck_a=%d,stack_b=%d\n",stack_a,stack_b);
+    printf("--------堆---程序员分配和释放，若程序不释放，程序介绍时由OS释放--\n");
+      printf("---静态区-全局变量和静态变量放在一块-\n");
+    
+    int *stack_q = testMemory();
+    printf("*stack_q = %d\n",*stack_q);
+      printf("*stack_q = %d\n",*stack_q);
+      printf("*stack_q = %d\n",*stack_q);
+    
+    char *me_str = malloc(sizeof(char)*10);
+    strcpy(me_str, "abc");
+    printf("me_str=%s\n",me_str);
+    free(me_str);
+    me_str = NULL;
+    printf("me_str=%s\n",me_str);
+    printf("me_str=%s\n",me_str);
+    
+     printf("---常量区-存放在常量区-\n");
+     printf("---代码区-存放二进制代码的区域-\n");
+    
     return 0;
 }
 

@@ -20,3 +20,5 @@ void changeStrToCharArray(char *string);//拷贝一个字符串到另一个字�
 int *funcStack();//测试栈
 int *funcStack_static();//测试栈
 int maxarr(int arr[],int length);
+
+int *testMemory();

@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#import <stdlib.h>
 
 int sumOfNumber(int sum){
     int ret = 0;
@@ -94,4 +95,14 @@ int maxarr(int arr[],int length){
         }
     }
     return max;
+}
+
+int *testMemory(){
+//    int a = 11;
+    static int a = 11; 
+//    int *p = &a;
+    int *p = malloc(sizeof(4));
+    p = &a;
+    return p;
+
 }
