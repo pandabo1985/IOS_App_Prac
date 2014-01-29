@@ -22,3 +22,4 @@ int *funcStack_static();//测试栈
 int maxarr(int arr[],int length);
 
 int *testMemory();
+int max_method_int(int x, int y);

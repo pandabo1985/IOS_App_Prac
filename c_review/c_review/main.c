@@ -42,6 +42,32 @@ typedef struct {
 } student_new02;
 
 
+
+typedef struct {char name[30];int age; float score} Person;
+
+void chang_p_name(char name[]){
+    
+    strcat(name, "（月薪过万）");
+};
+
+void change_p_fun(Person pers[], int arr_count, void (*p)(char name[])){
+    for (int i = 0;  i< arr_count; i++) {
+        if (pers[i].score > 90) {
+            p(pers[i].name);
+        }
+    }
+}
+
+#define KMAXVALUE(a,b) (a>b?a:b);
+#define FLAG 0;
+
+enum season {
+    spring,
+    summer,
+    autumn=5,
+    winter
+    };
+
 int main(int argc, const char * argv[])
 {
 
@@ -255,6 +281,59 @@ int main(int argc, const char * argv[])
      printf("---常量区-存放在常量区-\n");
      printf("---代码区-存放二进制代码的区域-\n");
     
+     printf("---宏，预编译时进行替换。无参宏，带参宏。-\n");
+    int hong_a = KMAXVALUE(3,5 );
+    printf("%d\n",hong_a);
+    
+    printf("---条件编译-\n");
+    #ifdef FLAG
+    printf("hello\n");
+    #else
+    printf("world\n");
+    #endif
+
+    printf("---枚举类型-\n");
+    printf("spring = %d\n",spring);
+    printf("summer = %d\n",summer);
+    printf("winter = %d\n",winter);
+    
+    printf("---const 限定的变量不能被修改-\n");
+    int con_a = 3;
+    const int *con_p = &con_a;
+    
+     printf("--函数指针--\n");
+    int (*method_p)(int x, int y) = NULL;
+    method_p = max_method_int;
+    printf("max int = %d\n",method_p(3,5));
+    
+    typedef int (*MAX_METHOD_P) (int , int);
+    MAX_METHOD_P max_method_p = NULL;
+    max_method_p = max_method_int;
+    printf("max int = %d\n",max_method_p(3,5));
+    //函数指针的是赋值，是对地址的赋值。
+    printf("method = %p\n",max_method_p);
+    printf("method = %p\n",max_method_int);
+    
+    printf("--回调函数：由调用方自己实现，供被调方调用的函数。回调函数的核心是指针作为参数。--\n");
+    
+   
+    Person person[5]={{"zhangsan1",17,77},
+    {"zhangsan2",18,97},
+    {"zhangsan3",19,97},
+    {"zhangsan4",15,87},
+    {"zhangsan5",16,78}
+    };
+    
+    void (*change_p)(char name[]) = chang_p_name;
+    
+    change_p_fun(person, 5, change_p);
+    for (int i  = 0; i < 5 ; i++ ) {
+        printf("person[%d].name = %s\n",i,person[i].name);
+    }
+    
     return 0;
 }
+
+
+
 

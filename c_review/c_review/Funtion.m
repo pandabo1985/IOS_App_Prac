@@ -106,3 +106,7 @@ int *testMemory(){
     return p;
 
 }
+
+int max_method_int(int x, int y){
+    return x>y?x:y;
+}
