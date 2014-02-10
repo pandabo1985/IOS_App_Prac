@@ -19,6 +19,10 @@
 		3B2BA16B18A9080700C4C248 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2BA15318A9080700C4C248 /* UIKit.framework */; };
 		3B2BA17318A9080700C4C248 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B2BA17118A9080700C4C248 /* InfoPlist.strings */; };
 		3B2BA17518A9080700C4C248 /* RubyChinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA17418A9080700C4C248 /* RubyChinaTests.m */; };
+		3B2BA18C18A90F1400C4C248 /* JLNimbusTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA18B18A90F1400C4C248 /* JLNimbusTableViewController.m */; };
+		3B2BA18F18A912BD00C4C248 /* RCForumTopicsC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA18E18A912BD00C4C248 /* RCForumTopicsC.m */; };
+		3B2BA19518A9146200C4C248 /* RCLeftMenuC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA19418A9146200C4C248 /* RCLeftMenuC.m */; };
+		3B2BA19D18A91C8B00C4C248 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA19C18A91C8B00C4C248 /* UIViewAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,14 @@
 		3B2BA17018A9080700C4C248 /* RubyChinaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RubyChinaTests-Info.plist"; sourceTree = "<group>"; };
 		3B2BA17218A9080700C4C248 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B2BA17418A9080700C4C248 /* RubyChinaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyChinaTests.m; sourceTree = "<group>"; };
+		3B2BA18A18A90F1400C4C248 /* JLNimbusTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNimbusTableViewController.h; sourceTree = "<group>"; };
+		3B2BA18B18A90F1400C4C248 /* JLNimbusTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNimbusTableViewController.m; sourceTree = "<group>"; };
+		3B2BA18D18A912BD00C4C248 /* RCForumTopicsC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCForumTopicsC.h; sourceTree = "<group>"; };
+		3B2BA18E18A912BD00C4C248 /* RCForumTopicsC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCForumTopicsC.m; sourceTree = "<group>"; };
+		3B2BA19318A9146200C4C248 /* RCLeftMenuC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLeftMenuC.h; sourceTree = "<group>"; };
+		3B2BA19418A9146200C4C248 /* RCLeftMenuC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLeftMenuC.m; sourceTree = "<group>"; };
+		3B2BA19B18A91C8B00C4C248 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		3B2BA19C18A91C8B00C4C248 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 		3B2BA14318A9080700C4C248 = {
 			isa = PBXGroup;
 			children = (
+				3B2BA18718A90E9700C4C248 /* Vendor */,
 				3B2BA15518A9080700C4C248 /* RubyChina */,
 				3B2BA16E18A9080700C4C248 /* RubyChinaTests */,
 				3B2BA14E18A9080700C4C248 /* Frameworks */,
@@ -107,6 +120,7 @@
 		3B2BA15518A9080700C4C248 /* RubyChina */ = {
 			isa = PBXGroup;
 			children = (
+				3B2BA18618A90E5600C4C248 /* Controller */,
 				3B2BA15E18A9080700C4C248 /* AppDelegate.h */,
 				3B2BA15F18A9080700C4C248 /* AppDelegate.m */,
 				3B2BA16118A9080700C4C248 /* Images.xcassets */,
@@ -142,6 +156,52 @@
 				3B2BA17118A9080700C4C248 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B2BA18618A90E5600C4C248 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BA18D18A912BD00C4C248 /* RCForumTopicsC.h */,
+				3B2BA18E18A912BD00C4C248 /* RCForumTopicsC.m */,
+				3B2BA19318A9146200C4C248 /* RCLeftMenuC.h */,
+				3B2BA19418A9146200C4C248 /* RCLeftMenuC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B2BA18718A90E9700C4C248 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BA18818A90EEE00C4C248 /* JLNimbusTimeline */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		3B2BA18818A90EEE00C4C248 /* JLNimbusTimeline */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BA19618A91B7300C4C248 /* 320Categories */,
+				3B2BA18918A90EEE00C4C248 /* Controllers */,
+			);
+			path = JLNimbusTimeline;
+			sourceTree = "<group>";
+		};
+		3B2BA18918A90EEE00C4C248 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BA18A18A90F1400C4C248 /* JLNimbusTableViewController.h */,
+				3B2BA18B18A90F1400C4C248 /* JLNimbusTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3B2BA19618A91B7300C4C248 /* 320Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BA19B18A91C8B00C4C248 /* UIViewAdditions.h */,
+				3B2BA19C18A91C8B00C4C248 /* UIViewAdditions.m */,
+			);
+			path = 320Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +299,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2BA18C18A90F1400C4C248 /* JLNimbusTableViewController.m in Sources */,
 				3B2BA16018A9080700C4C248 /* AppDelegate.m in Sources */,
+				3B2BA19D18A91C8B00C4C248 /* UIViewAdditions.m in Sources */,
+				3B2BA19518A9146200C4C248 /* RCLeftMenuC.m in Sources */,
+				3B2BA18F18A912BD00C4C248 /* RCForumTopicsC.m in Sources */,
 				3B2BA15C18A9080700C4C248 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

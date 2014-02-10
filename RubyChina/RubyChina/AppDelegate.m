@@ -7,15 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "RCForumTopicsC.h"
 
 @implementation AppDelegate
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -UIApplicationDelegate
+
+///////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+#if 1
+    RCForumTopicsC *forumTopics = [[RCForumTopicsC alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:forumTopics];
+    nav.navigationBar.translucent = NO;
+    self.window.rootViewController = nav;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+#else
+#endif
+
     return YES;
 }
 
