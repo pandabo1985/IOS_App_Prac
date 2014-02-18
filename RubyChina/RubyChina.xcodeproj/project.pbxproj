@@ -23,6 +23,9 @@
 		3B2BA18F18A912BD00C4C248 /* RCForumTopicsC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA18E18A912BD00C4C248 /* RCForumTopicsC.m */; };
 		3B2BA19518A9146200C4C248 /* RCLeftMenuC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA19418A9146200C4C248 /* RCLeftMenuC.m */; };
 		3B2BA19D18A91C8B00C4C248 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BA19C18A91C8B00C4C248 /* UIViewAdditions.m */; };
+		3B92E17F18AA659E00FE81CE /* RCGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B92E17E18AA659E00FE81CE /* RCGlobalConfig.m */; };
+		3BB95BF518B06E79004D29A7 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB95BF218B06E79004D29A7 /* JASidePanelController.m */; };
+		3BB95BF618B06E79004D29A7 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB95BF418B06E79004D29A7 /* UIViewController+JASidePanel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,13 @@
 		3B2BA19418A9146200C4C248 /* RCLeftMenuC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLeftMenuC.m; sourceTree = "<group>"; };
 		3B2BA19B18A91C8B00C4C248 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		3B2BA19C18A91C8B00C4C248 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		3B92E17A18AA59C400FE81CE /* MacroDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroDefines.h; sourceTree = "<group>"; };
+		3B92E17D18AA659E00FE81CE /* RCGlobalConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCGlobalConfig.h; sourceTree = "<group>"; };
+		3B92E17E18AA659E00FE81CE /* RCGlobalConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCGlobalConfig.m; sourceTree = "<group>"; };
+		3BB95BF118B06E79004D29A7 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		3BB95BF218B06E79004D29A7 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		3BB95BF318B06E79004D29A7 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		3BB95BF418B06E79004D29A7 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,9 @@
 		3B2BA15518A9080700C4C248 /* RubyChina */ = {
 			isa = PBXGroup;
 			children = (
+				3B92E17D18AA659E00FE81CE /* RCGlobalConfig.h */,
+				3B92E17E18AA659E00FE81CE /* RCGlobalConfig.m */,
+				3B92E17A18AA59C400FE81CE /* MacroDefines.h */,
 				3B2BA18618A90E5600C4C248 /* Controller */,
 				3B2BA15E18A9080700C4C248 /* AppDelegate.h */,
 				3B2BA15F18A9080700C4C248 /* AppDelegate.m */,
@@ -172,6 +185,7 @@
 		3B2BA18718A90E9700C4C248 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				3BB95BEF18B06C97004D29A7 /* JASidePanels */,
 				3B2BA18818A90EEE00C4C248 /* JLNimbusTimeline */,
 			);
 			path = Vendor;
@@ -202,6 +216,25 @@
 				3B2BA19C18A91C8B00C4C248 /* UIViewAdditions.m */,
 			);
 			path = 320Categories;
+			sourceTree = "<group>";
+		};
+		3BB95BEF18B06C97004D29A7 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				3BB95BF018B06C97004D29A7 /* Source */,
+			);
+			path = JASidePanels;
+			sourceTree = "<group>";
+		};
+		3BB95BF018B06C97004D29A7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3BB95BF118B06E79004D29A7 /* JASidePanelController.h */,
+				3BB95BF218B06E79004D29A7 /* JASidePanelController.m */,
+				3BB95BF318B06E79004D29A7 /* UIViewController+JASidePanel.h */,
+				3BB95BF418B06E79004D29A7 /* UIViewController+JASidePanel.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB95BF618B06E79004D29A7 /* UIViewController+JASidePanel.m in Sources */,
 				3B2BA18C18A90F1400C4C248 /* JLNimbusTableViewController.m in Sources */,
+				3B92E17F18AA659E00FE81CE /* RCGlobalConfig.m in Sources */,
 				3B2BA16018A9080700C4C248 /* AppDelegate.m in Sources */,
 				3B2BA19D18A91C8B00C4C248 /* UIViewAdditions.m in Sources */,
 				3B2BA19518A9146200C4C248 /* RCLeftMenuC.m in Sources */,
 				3B2BA18F18A912BD00C4C248 /* RCForumTopicsC.m in Sources */,
+				3BB95BF518B06E79004D29A7 /* JASidePanelController.m in Sources */,
 				3B2BA15C18A9080700C4C248 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +541,7 @@
 				3B2BA17A18A9080700C4C248 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B2BA17B18A9080700C4C248 /* Build configuration list for PBXNativeTarget "RubyChinaTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +550,7 @@
 				3B2BA17D18A9080700C4C248 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

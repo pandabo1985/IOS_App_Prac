@@ -7,6 +7,7 @@
 //
 
 #import "JLNimbusTableViewController.h"
+#import "UIViewAdditions.h"
 
 @interface JLNimbusTableViewController ()
 

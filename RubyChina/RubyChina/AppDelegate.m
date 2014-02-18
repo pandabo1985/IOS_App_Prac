@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RCForumTopicsC.h"
+#import "RCLeftMenuC.h"
 
 @implementation AppDelegate
 
@@ -24,7 +25,12 @@
     RCForumTopicsC *forumTopics = [[RCForumTopicsC alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:forumTopics];
     nav.navigationBar.translucent = NO;
-    self.window.rootViewController = nav;
+    RCLeftMenuC *leftSideC = [[RCLeftMenuC alloc]initWithStyle:UITableViewStylePlain];
+    self.sidePanelController =[[JASidePanelController alloc] init];
+    self.sidePanelController.leftGapPercentage = LEFT_GAP_PERCENTAGE;
+    self.sidePanelController.centerPanel = nav;
+    self.sidePanelController.leftPanel = leftSideC;
+    self.window.rootViewController = self.sidePanelController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 #else
